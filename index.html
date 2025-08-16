@@ -29,6 +29,7 @@
             100% { background-position: 0% 50%; }
         }
         
+        /* Floating elements for visual interest */
         .floating-heart {
             position: fixed;
             font-size: 30px;
@@ -51,6 +52,7 @@
             z-index: 2;
         }
         
+        /* Main Header - Make it feel like a family crest */
         .header {
             text-align: center;
             background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.85));
@@ -150,6 +152,7 @@
             color: #5f6368;
         }
         
+        /* Navigation Tabs */
         .nav-tabs {
             display: flex;
             justify-content: center;
@@ -181,6 +184,7 @@
             transform: scale(1.05);
         }
         
+        /* Content Sections */
         .content-section {
             display: none;
             animation: slideIn 0.5s ease;
@@ -201,7 +205,7 @@
             }
         }
         
-        /* Single Column Rules Layout */
+        /* Rule Cards - Single Column */
         .rules-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -316,7 +320,7 @@
             font-weight: bold;
         }
         
-        /* Children's Rights Section - Single Column */
+        /* Dad's Rights Section - Single Column */
         .dads-rights {
             background: linear-gradient(135deg, rgba(52,152,219,0.1), rgba(155,89,182,0.1));
             border-radius: 20px;
@@ -360,7 +364,7 @@
             color: #3498db;
         }
         
-        /* Growth & Learning - Two Sections */
+        /* Growth & Learning Section */
         .consequences-section {
             background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,235,235,0.95));
             border-radius: 30px;
@@ -570,11 +574,13 @@
             font-weight: bold;
             color: #27ae60;
             margin-bottom: 10px;
+            text-align: center;
         }
         
         .goal-description {
             color: #5f6368;
             line-height: 1.6;
+            text-align: center;
             margin-bottom: 15px;
         }
         
@@ -634,7 +640,7 @@
             box-shadow: 0 5px 15px rgba(39,174,96,0.3);
         }
         
-        /* Checklist Styles */
+        /* Interactive Checklists */
         .checklist-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -708,7 +714,7 @@
             font-size: 18px;
         }
         
-        /* Star System - Bigger Text */
+        /* Rewards Section - Larger Text */
         .rewards-section {
             background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,249,235,0.95));
             border-radius: 30px;
@@ -776,6 +782,7 @@
             background: linear-gradient(135deg, rgba(231,76,60,0.1), rgba(255,107,107,0.05));
         }
         
+        /* Motivational Quotes */
         .quote-section {
             background: linear-gradient(135deg, rgba(155,89,182,0.1), rgba(52,152,219,0.1));
             border-radius: 20px;
@@ -816,6 +823,12 @@
                 font-size: 2.5em;
             }
             
+            .rules-grid,
+            .dads-rights-grid,
+            .star-rules {
+                grid-template-columns: 1fr;
+            }
+            
             .nav-tabs {
                 flex-direction: column;
                 align-items: center;
@@ -828,20 +841,18 @@
             .rule-title {
                 font-size: 1.4em;
             }
-            
-            .goals-dashboard {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
 <body>
+    <!-- Floating decorative elements -->
     <div class="floating-heart" style="top: 10%; left: 5%;">💖</div>
     <div class="floating-heart" style="top: 60%; right: 10%; animation-delay: 5s;">🌟</div>
     <div class="floating-heart" style="bottom: 20%; left: 8%; animation-delay: 10s;">🌈</div>
     <div class="floating-heart" style="top: 30%; right: 5%; animation-delay: 15s;">✨</div>
     
     <div class="container">
+        <!-- Main Header -->
         <div class="header">
             <h1>🏡 Our Family Journey</h1>
             <div class="subtitle">✨ Together We Grow Stronger Every Day ✨</div>
@@ -866,6 +877,7 @@
             </div>
         </div>
         
+        <!-- Navigation -->
         <div class="nav-tabs">
             <div class="nav-tab active" onclick="showSection('rules')">🌟 Our Guidelines</div>
             <div class="nav-tab" onclick="showSection('growth')">🌱 Growth & Learning</div>
@@ -998,37 +1010,38 @@
                 </div>
             </div>
             
+            <!-- Dad's Rights Section -->
             <div class="dads-rights">
                 <h3>🛡️ Children's Rights (What You Can Expect from Dad)</h3>
                 <div class="dads-rights-grid">
-                    <div class="dad-right">
+                    <div class="dad-right" onclick="toggleDadRightContent(this)">
                         <strong>1. Calm voice & respect.</strong> Dad uses a calm voice—no yelling, mocking, or shaming. If he's heated, he calls a 60-second Pause and resets.
                     </div>
-                    <div class="dad-right">
+                    <div class="dad-right" onclick="toggleDadRightContent(this)">
                         <strong>2. Clear expectations.</strong> Dad shows what "done" looks like in one sentence or with a picture.
                     </div>
-                    <div class="dad-right">
+                    <div class="dad-right" onclick="toggleDadRightContent(this)">
                         <strong>3. Chance to make it right.</strong> Before any consequence, there's a Repair Window: 5 minutes on a visible timer to fix the issue.
                     </div>
-                    <div class="dad-right">
+                    <div class="dad-right" onclick="toggleDadRightContent(this)">
                         <strong>4. Daily 1:1 time (15 min each).</strong> Antoine, Cassia, and Julian each get 15 minutes of distraction-free Special Time. Missed time is made up within 48 hours.
                     </div>
-                    <div class="dad-right">
+                    <div class="dad-right" onclick="toggleDadRightContent(this)">
                         <strong>5. Opinions are heard.</strong> Dad listens fully, repeats back what he heard, considers it, and explains the decision (even when it's "no").
                     </div>
-                    <div class="dad-right">
+                    <div class="dad-right" onclick="toggleDadRightContent(this)">
                         <strong>6. One appeal.</strong> You may make one respectful appeal per decision with new info; Dad will reconsider once, quickly.
                     </div>
-                    <div class="dad-right">
+                    <div class="dad-right" onclick="toggleDadRightContent(this)">
                         <strong>7. Focused attention.</strong> When you need help, Dad gives a 5-minute Focus Window—no phone or computer—to start/finish a task.
                     </div>
-                    <div class="dad-right">
+                    <div class="dad-right" onclick="toggleDadRightContent(this)">
                         <strong>8. Explanations, not just orders.</strong> For non-urgent things, Dad explains the "why." For urgent/safety: follow now, explain right after.
                     </div>
-                    <div class="dad-right">
+                    <div class="dad-right" onclick="toggleDadRightContent(this)">
                         <strong>9. Real apology & repair.</strong> Dad uses the 3 R's—Recognize, Repair, Restore (and models the redo).
                     </div>
-                    <div class="dad-right">
+                    <div class="dad-right" onclick="toggleDadRightContent(this)">
                         <strong>10. Same cleanliness rules.</strong> Dad follows the same reset rules as everyone.
                     </div>
                 </div>
@@ -1461,34 +1474,50 @@
     </div>
     
     <script>
+        // Tab Navigation
         function showSection(sectionId) {
+            // Hide all sections
             document.querySelectorAll('.content-section').forEach(section => {
                 section.classList.remove('active');
             });
             
+            // Remove active class from all tabs
             document.querySelectorAll('.nav-tab').forEach(tab => {
                 tab.classList.remove('active');
             });
             
+            // Show selected section
             document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked tab
             event.target.classList.add('active');
         }
         
+        // Toggle rule content
         function toggleRuleContent(titleElement) {
             const content = titleElement.nextElementSibling;
             content.classList.toggle('show');
         }
         
+        // Toggle dad's rights content
+        function toggleDadRightContent(rightElement) {
+            // For now, just add a hover effect - could expand with more detail
+            rightElement.style.background = rightElement.style.background === 'rgb(240, 248, 255)' ? 'white' : '#f0f8ff';
+        }
+        
+        // Toggle growth content
         function toggleGrowthContent(titleElement) {
             const content = titleElement.nextElementSibling;
             content.classList.toggle('show');
         }
         
+        // Toggle play content
         function togglePlayContent(titleElement) {
             const content = titleElement.nextElementSibling;
             content.classList.toggle('show');
         }
         
+        // Goal progress functions
         function updateGoalProgress(cardElement, goalType) {
             const progressBar = cardElement.querySelector('.goal-progress-bar');
             const currentWidth = parseInt(progressBar.style.width) || 0;
@@ -1550,6 +1579,7 @@
             }, 2000);
         }
         
+        // Random motivational messages
         const motivationalMessages = [
             "You're doing amazing!",
             "Every day is a fresh start!",
@@ -1561,6 +1591,7 @@
             "Teamwork makes the dream work!"
         ];
         
+        // Show random motivational message every 30 seconds
         setInterval(() => {
             const message = motivationalMessages[Math.floor(Math.random() * motivationalMessages.length)];
             const toast = document.createElement('div');
@@ -1586,6 +1617,7 @@
             }, 3000);
         }, 30000);
         
+        // Add slide animations
         const animStyle = document.createElement('style');
         animStyle.textContent = `
             @keyframes slideIn {
