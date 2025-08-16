@@ -1,4 +1,3 @@
-e
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -209,7 +208,7 @@ e
         /* Rule Cards - Make them fun! */
         .rules-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             margin-bottom: 30px;
         }
@@ -279,17 +278,36 @@ e
         
         .rule-title {
             color: #2c3e50;
-            font-size: 1.3em;
+            font-size: 1.8em;
             font-weight: bold;
             margin-bottom: 12px;
             display: flex;
             align-items: center;
+            cursor: pointer;
+        }
+        
+        .rule-title:hover {
+            color: #4ECDC4;
         }
         
         .rule-content {
             color: #5f6368;
             line-height: 1.7;
             font-size: 0.95em;
+            display: none;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid rgba(78,205,196,0.2);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .rule-content.show {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         .rule-content strong {
@@ -298,6 +316,41 @@ e
             padding: 3px 8px;
             border-radius: 12px;
             font-weight: bold;
+        }
+        
+        /* Dad's Rights Section */
+        .dads-rights {
+            background: linear-gradient(135deg, rgba(52,152,219,0.1), rgba(155,89,182,0.1));
+            border-radius: 20px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 2px solid rgba(52,152,219,0.2);
+        }
+        
+        .dads-rights h3 {
+            color: #3498db;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .dads-rights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        
+        .dad-right {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            border-left: 4px solid #3498db;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        
+        .dad-right strong {
+            color: #3498db;
         }
         
         /* Consequences Section - Make it feel constructive */
@@ -363,39 +416,76 @@ e
             font-size: 18px;
         }
         
-        /* Special Tools Cards */
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 25px;
+        .growth-item {
+            margin-bottom: 20px;
         }
         
-        .tool-card {
-            background: linear-gradient(135deg, white, rgba(52,152,219,0.05));
+        .growth-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #e74c3c;
+            cursor: pointer;
+            padding: 15px;
+            background: white;
+            border-radius: 12px;
+            border-left: 4px solid #e74c3c;
+            transition: all 0.3s;
+        }
+        
+        .growth-title:hover {
+            background: #fff5f5;
+            transform: translateX(5px);
+        }
+        
+        .growth-explanation {
+            display: none;
+            padding: 15px;
+            margin-top: 10px;
+            background: #fff5f5;
+            border-radius: 12px;
+            border: 1px solid rgba(231,76,60,0.2);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .growth-explanation.show {
+            display: block;
+        }
+        
+        /* Weekly Goals Section */
+        .weekly-goals {
+            background: linear-gradient(135deg, rgba(39,174,96,0.1), rgba(46,204,113,0.1));
             border-radius: 20px;
             padding: 25px;
-            border: 2px solid rgba(52,152,219,0.2);
-            transition: all 0.3s;
-            cursor: pointer;
+            margin: 30px 0;
+            border: 2px solid rgba(39,174,96,0.2);
         }
         
-        .tool-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 10px 25px rgba(52,152,219,0.2);
-            border-color: #3498db;
+        .weekly-goals h3 {
+            color: #27ae60;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
         }
         
-        .tool-icon {
-            font-size: 35px;
+        .goal-item {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 15px;
+            border-left: 5px solid #27ae60;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .goal-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #27ae60;
             margin-bottom: 10px;
         }
         
-        .tool-name {
-            color: #3498db;
-            font-weight: bold;
-            font-size: 1.3em;
-            margin-bottom: 12px;
+        .goal-description {
+            color: #5f6368;
+            line-height: 1.6;
         }
         
         /* Interactive Checklists */
@@ -481,172 +571,48 @@ e
             border: 3px solid rgba(255,215,0,0.3);
         }
         
-        .rewards-grid {
+        .star-system {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .star-counter {
+            font-size: 4em;
+            color: #f39c12;
+            margin: 20px 0;
+        }
+        
+        .star-explanation {
+            font-size: 1.2em;
+            color: #5f6368;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .star-rules {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin-top: 25px;
         }
         
-        .reward-card {
-            background: white;
-            border-radius: 20px;
-            padding: 25px;
-            text-align: center;
-            transition: all 0.3s;
-            cursor: pointer;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .reward-card::before {
-            content: "⭐";
-            position: absolute;
-            font-size: 100px;
-            opacity: 0.05;
-            top: -20px;
-            right: -20px;
-            transform: rotate(15deg);
-        }
-        
-        .reward-card:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 15px 30px rgba(255,215,0,0.3);
-            border-color: gold;
-            background: linear-gradient(135deg, white, rgba(255,215,0,0.05));
-        }
-        
-        .reward-emoji {
-            font-size: 50px;
-            margin-bottom: 15px;
-            animation: rewardBounce 2s ease-in-out infinite;
-        }
-        
-        @keyframes rewardBounce {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-10px) scale(1.1); }
-        }
-        
-        .reward-title {
-            color: #f39c12;
-            font-weight: bold;
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
-        
-        .reward-description {
-            color: #5f6368;
-            line-height: 1.5;
-        }
-        
-        /* Progress Tracker */
-        .progress-section {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        
-        .progress-title {
-            color: #9b59b6;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .progress-bars {
-            display: grid;
-            gap: 20px;
-        }
-        
-        .progress-item {
+        .star-rule {
             background: #f8f9fa;
-            padding: 15px;
-            border-radius: 12px;
-        }
-        
-        .progress-label {
-            font-weight: bold;
-            color: #5f6368;
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .progress-bar-container {
-            background: #e9ecef;
-            height: 25px;
+            padding: 20px;
             border-radius: 15px;
-            overflow: hidden;
-            position: relative;
+            border: 2px solid #f39c12;
         }
         
-        .progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, #9b59b6, #e91e63);
-            border-radius: 15px;
-            transition: width 1s ease;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-right: 10px;
-            color: white;
-            font-weight: bold;
-            animation: progressPulse 2s ease-in-out infinite;
+        .star-rule.positive {
+            border-color: #27ae60;
+            background: linear-gradient(135deg, rgba(39,174,96,0.1), rgba(46,204,113,0.05));
         }
         
-        @keyframes progressPulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-        
-        /* Fun Interactive Elements */
-        .celebration-mode {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-        
-        .celebrate-btn {
-            padding: 12px 25px;
-            background: linear-gradient(135deg, #f39c12, #e74c3c);
-            color: white;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 16px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            transition: all 0.3s;
-        }
-        
-        .celebrate-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        }
-        
-        .confetti {
-            position: fixed;
-            width: 10px;
-            height: 10px;
-            background: #f39c12;
-            animation: confettiFall 3s linear;
-            z-index: 999;
-        }
-        
-        @keyframes confettiFall {
-            0% {
-                transform: translateY(-100vh) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(100vh) rotate(720deg);
-                opacity: 0;
-            }
+        .star-rule.negative {
+            border-color: #e74c3c;
+            background: linear-gradient(135deg, rgba(231,76,60,0.1), rgba(255,107,107,0.05));
         }
         
         /* Motivational Quotes */
@@ -660,10 +626,11 @@ e
         }
         
         .quote-text {
-            font-size: 1.4em;
+            font-size: 1.2em;
             color: #5f6368;
             font-style: italic;
             margin-bottom: 10px;
+            line-height: 1.6;
         }
         
         .quote-author {
@@ -678,8 +645,8 @@ e
             }
             
             .rules-grid,
-            .tools-grid,
-            .rewards-grid {
+            .dads-rights-grid,
+            .star-rules {
                 grid-template-columns: 1fr;
             }
             
@@ -690,6 +657,10 @@ e
             
             .family-avatar-row {
                 flex-wrap: wrap;
+            }
+            
+            .rule-title {
+                font-size: 1.4em;
             }
         }
         
@@ -719,11 +690,6 @@ e
     <div class="floating-heart" style="top: 30%; right: 5%; animation-delay: 15s;">✨</div>
     
     <div class="container">
-        <!-- Celebration Button -->
-        <div class="celebration-mode">
-            <button class="celebrate-btn" onclick="celebrate()">🎉 Celebrate Success!</button>
-        </div>
-        
         <!-- Main Header -->
         <div class="header">
             <h1>🏡 Our Family Journey</h1>
@@ -735,16 +701,16 @@ e
                     <div class="member-name">Dad</div>
                 </div>
                 <div class="family-member" style="--delay: 1;">
+                    <div class="avatar">👨‍🦱</div>
+                    <div class="member-name">Antoine</div>
+                </div>
+                <div class="family-member" style="--delay: 2;">
                     <div class="avatar">👧</div>
                     <div class="member-name">Cassia</div>
                 </div>
-                <div class="family-member" style="--delay: 2;">
+                <div class="family-member" style="--delay: 3;">
                     <div class="avatar">👦</div>
                     <div class="member-name">Julian</div>
-                </div>
-                <div class="family-member" style="--delay: 3;">
-                    <div class="avatar">👶</div>
-                    <div class="member-name">Little One</div>
                 </div>
             </div>
         </div>
@@ -753,127 +719,168 @@ e
         <div class="nav-tabs">
             <div class="nav-tab active" onclick="showSection('rules')">🌟 Our Guidelines</div>
             <div class="nav-tab" onclick="showSection('growth')">🌱 Growth & Learning</div>
-            <div class="nav-tab" onclick="showSection('tools')">🛠️ Helper Tools</div>
+            <div class="nav-tab" onclick="showSection('goals')">🎯 This Week's Goals</div>
             <div class="nav-tab" onclick="showSection('checklist')">✅ Daily Wins</div>
             <div class="nav-tab" onclick="showSection('rewards')">🏆 Celebrations</div>
-            <div class="nav-tab" onclick="showSection('progress')">📊 Our Progress</div>
         </div>
         
         <!-- Rules Section -->
         <div id="rules" class="content-section active">
             <div class="quote-section">
-                <div class="quote-text">"In this family, we do second chances, we do grace, we do real, we do mistakes, we do I'm sorry, we do loud really well, we do hugs, we do family, we do love."</div>
-                <div class="quote-author">- Our Family Motto</div>
+                <div class="quote-text"><strong>Ephesians 4:32:</strong> "Be kind and compassionate to one another, forgiving each other, just as in Christ God forgave you."</div>
+                <div class="quote-text"><strong>Ephesians 6:4:</strong> "Fathers, do not provoke your children to anger, but bring them up in the discipline and instruction of the Lord."</div>
             </div>
             
             <div class="rules-grid">
                 <div class="rule-card">
                     <div class="rule-icon">🤗</div>
-                    <div class="rule-title">
+                    <div class="rule-title" onclick="toggleRuleContent(this)">
                         <span class="rule-number">1</span>
                         Bodies & Space
                     </div>
                     <div class="rule-content">
-                        Keep hands/feet/objects to yourself. <strong>"Stop" means stop immediately</strong>. Respect others' bubble - if someone moves away, don't follow.
+                        Keep hands/feet/objects to yourself. <strong>Don't hit, push, or hurt anyone.</strong> <strong>"Stop" means stop immediately.</strong> Respect others' bubble - if someone moves away, don't follow.
+                        <br><br>
+                        <strong>Example:</strong> Touching after "Stop"? → Redo (hands in pockets, move 2 steps back) → If repeated: separate space for 15 min and 10 repair minutes helping the sibling (or do their quick chore).
                     </div>
                 </div>
                 
                 <div class="rule-card">
-                    <div class="rule-icon">💬</div>
-                    <div class="rule-title">
+                    <div class="rule-icon">👂</div>
+                    <div class="rule-title" onclick="toggleRuleContent(this)">
                         <span class="rule-number">2</span>
-                        Words & Taking Turns
+                        Attention
                     </div>
                     <div class="rule-content">
-                        Calm voices (indoor volume). <strong>Wait your turn - no interrupting</strong>. Listen with your eyes and body. Show interest by asking questions!
-                    </div>
-                </div>
-                
-                <div class="rule-card">
-                    <div class="rule-icon">⚡</div>
-                    <div class="rule-title">
-                        <span class="rule-number">3</span>
-                        First Response
-                    </div>
-                    <div class="rule-content">
-                        Within 5 seconds say <strong>"Got it!"</strong> or ask for a quick finish time. If granted, timer on; then do it!
+                        Pay attention when you are spoken to and respond to show respect. If you need time to respond, say so—that is OK too. But remember that Dad has the responsibility to keep us going, so he has to have the authority and opportunity to do so, and that starts with listening and responding.
+                        <br><br>
+                        <strong>Example:</strong> No "Got it" or plan ask? → Redo the response → If repeated: screen pause per ladder until the first step is started.
                     </div>
                 </div>
                 
                 <div class="rule-card">
                     <div class="rule-icon">🏠</div>
-                    <div class="rule-title">
-                        <span class="rule-number">4</span>
-                        Put It Back Plus
+                    <div class="rule-title" onclick="toggleRuleContent(this)">
+                        <span class="rule-number">3</span>
+                        Stewardship
                     </div>
                     <div class="rule-content">
-                        Things live at their address. Ask before borrowing. Put it back <strong>PLUS one thing better</strong> (wipe counter, straighten cushions).
+                        Take care of what is entrusted to you—yourself, above all, and things that are given to you. Try to only put things back where they belong, but leave things better than you found them. If you see something that should be thrown away, even if you didn't leave it there, throw it away. We are a team, a family.
+                        <br><br>
+                        <strong>Example:</strong> Gear left out? → Redo → Holding Shelf until tomorrow or earn-back with a 2-minute tidy.
                     </div>
                 </div>
                 
                 <div class="rule-card">
                     <div class="rule-icon">📚</div>
-                    <div class="rule-title">
-                        <span class="rule-number">5</span>
-                        Responsibilities First
+                    <div class="rule-title" onclick="toggleRuleContent(this)">
+                        <span class="rule-number">4</span>
+                        First Things First
                     </div>
                     <div class="rule-content">
-                        Morning/Evening checklist AND homework before screens. <strong>When work is done, then fun!</strong>
+                        Everyone wants to do the fun things first. But the first things come first. The first things are our responsibilities. Morning/Evening checklists, homework, chores. <strong>When these things are done, then it's time for fun.</strong>
+                        <br><br>
+                        <strong>Example:</strong> Screens before checklist? → Screen pauses; do checklist; resume when done. Chronic tardy mornings: you "pay back" lost dad time with one quick help-job after school.
                     </div>
                 </div>
                 
                 <div class="rule-card">
                     <div class="rule-icon">💝</div>
-                    <div class="rule-title">
-                        <span class="rule-number">6</span>
-                        Honesty & Repair
+                    <div class="rule-title" onclick="toggleRuleContent(this)">
+                        <span class="rule-number">5</span>
+                        Honesty is the Only Policy
                     </div>
                     <div class="rule-content">
-                        Tell the truth. If you break/forget/hurt: <strong>own it → apologize → repair it</strong>.
+                        Tell the truth. If you break/forget/hurt: <strong>own it → apologize → repair it.</strong> "God can save the sinner you are, not the saint you pretend to be."
+                        <br><br>
+                        <strong>Example:</strong> Admit damage right away: help fix/replace; praise honesty. If hidden: same repair + extra repair minutes.
                     </div>
                 </div>
                 
                 <div class="rule-card">
                     <div class="rule-icon">💭</div>
-                    <div class="rule-title">
-                        <span class="rule-number">7</span>
+                    <div class="rule-title" onclick="toggleRuleContent(this)">
+                        <span class="rule-number">6</span>
                         Think of Others First
                     </div>
                     <div class="rule-content">
-                        Before asking/doing: <strong>"How will this affect others?"</strong> Share airtime - after you talk, ask about someone else!
+                        Sometimes we can hurt each other when we never even imagined that could be possible. So we need to ask ourselves how what we are going to say or do is going to make someone else feel (not just how it might make us feel).
+                        <br><br>
+                        <strong>Example:</strong> Rude tone/name-calling? → Redo the sentence respectfully → If repeated: conversation pause (10 min) + apology/repair (kind note or act).
                     </div>
                 </div>
                 
                 <div class="rule-card">
                     <div class="rule-icon">📱</div>
-                    <div class="rule-title">
-                        <span class="rule-number">8</span>
-                        Tech with Care
+                    <div class="rule-title" onclick="toggleRuleContent(this)">
+                        <span class="rule-number">7</span>
+                        Screen Time
                     </div>
                     <div class="rule-content">
-                        Only in allowed places/times. <strong>Parents have passwords</strong>. No devices in bedrooms/bathrooms.
-                    </div>
-                </div>
-                
-                <div class="rule-card">
-                    <div class="rule-icon">🛡️</div>
-                    <div class="rule-title">
-                        <span class="rule-number">9</span>
-                        Safety & Boundaries
-                    </div>
-                    <div class="rule-content">
-                        Seatbelts, helmets, kitchen/tools with permission. <strong>Tell parents where you're going</strong>. Keep spaces guest-ready!
+                        God did not create you to just look at a screen but also to look at the world and other people. Don't just consume what other people are doing, but do things yourselves so you can figure out what unique talents God has given you and what will give you purpose and happiness.
+                        <br><br>
+                        <strong>Example:</strong> Device in off-limits place or time? → Park device for remainder of the hour (1st) → rest of afternoon/evening (2nd) → rest of day (3rd).
                     </div>
                 </div>
                 
                 <div class="rule-card">
                     <div class="rule-icon">👨‍👩‍👧‍👦</div>
-                    <div class="rule-title">
-                        <span class="rule-number">10</span>
-                        We're a Team
+                    <div class="rule-title" onclick="toggleRuleContent(this)">
+                        <span class="rule-number">8</span>
+                        We Are More Than a Team
                     </div>
                     <div class="rule-content">
-                        Help when you see a need. Celebrate others' wins. <strong>One kind word/act per family member daily</strong>. Family first!
+                        We are a Family. Don't always worry if someone else's task is more difficult than yours, or if someone else got something you didn't. Comparison is the thief of joy. And especially when we are all in the same boat. <strong>Sibling Peace Code:</strong> If used successfully → bonus praise/token. If they escalate: both kids to calm space → redo Peace Code → repair.
+                    </div>
+                </div>
+                
+                <div class="rule-card">
+                    <div class="rule-icon">🛡️</div>
+                    <div class="rule-title" onclick="toggleRuleContent(this)">
+                        <span class="rule-number">9</span>
+                        Obedience
+                    </div>
+                    <div class="rule-content">
+                        Dad may not always be right, and you will have a chance to reason with him. But sometimes, you will have to accept his decision. This is important and a commandment from God. It is not arbitrary but by design. Dad has been around longer, and plus you have to have someone to decide—think of the example of Buridan's Donkey. We need a final authority.
+                        <br><br>
+                        <strong>Example:</strong> Misuse of tools/bikes/kitchen? → Immediate pause for the day; review safety; earn-back with supervised use + repair if any damage.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Dad's Rights Section -->
+            <div class="dads-rights">
+                <h3>🛡️ Children's Rights (What You Can Expect from Dad)</h3>
+                <div class="dads-rights-grid">
+                    <div class="dad-right">
+                        <strong>1. Calm voice & respect.</strong> Dad uses a calm voice—no yelling, mocking, or shaming. If he's heated, he calls a 60-second Pause and resets.
+                    </div>
+                    <div class="dad-right">
+                        <strong>2. Clear expectations.</strong> Dad shows what "done" looks like in one sentence or with a picture.
+                    </div>
+                    <div class="dad-right">
+                        <strong>3. Chance to make it right.</strong> Before any consequence, there's a Repair Window: 5 minutes on a visible timer to fix the issue.
+                    </div>
+                    <div class="dad-right">
+                        <strong>4. Daily 1:1 time (15 min each).</strong> Antoine, Cassia, and Julian each get 15 minutes of distraction-free Special Time. Missed time is made up within 48 hours.
+                    </div>
+                    <div class="dad-right">
+                        <strong>5. Opinions are heard.</strong> Dad listens fully, repeats back what he heard, considers it, and explains the decision (even when it's "no").
+                    </div>
+                    <div class="dad-right">
+                        <strong>6. One appeal.</strong> You may make one respectful appeal per decision with new info; Dad will reconsider once, quickly.
+                    </div>
+                    <div class="dad-right">
+                        <strong>7. Focused attention.</strong> When you need help, Dad gives a 5-minute Focus Window—no phone or computer—to start/finish a task.
+                    </div>
+                    <div class="dad-right">
+                        <strong>8. Explanations, not just orders.</strong> For non-urgent things, Dad explains the "why." For urgent/safety: follow now, explain right after.
+                    </div>
+                    <div class="dad-right">
+                        <strong>9. Real apology & repair.</strong> Dad uses the 3 R's—Recognize, Repair, Restore (and models the redo).
+                    </div>
+                    <div class="dad-right">
+                        <strong>10. Same cleanliness rules.</strong> Dad follows the same reset rules as everyone.
                     </div>
                 </div>
             </div>
@@ -885,106 +892,74 @@ e
                 <h2 class="section-title">🌱 How We Learn & Grow</h2>
                 
                 <div class="ladder-container">
-                    <div class="ladder-step">
-                        <div class="step-number">1</div>
-                        <strong>Gentle Reminder:</strong> Quick reset - chance to do it right (0-10 seconds)
-                    </div>
-                    <div class="ladder-step">
-                        <div class="step-number">2</div>
-                        <strong>Practice Time:</strong> Let's try that again the right way!
-                    </div>
-                    <div class="ladder-step">
-                        <div class="step-number">3</div>
-                        <strong>Pause & Think:</strong> Take a break from the activity
-                        <ul style="margin-top: 10px; margin-left: 20px;">
-                            <li>Screens: 15 min → 30 min → rest of day</li>
-                            <li>Items left out: Holding shelf until tomorrow</li>
-                        </ul>
-                    </div>
-                    <div class="ladder-step">
-                        <div class="step-number">4</div>
-                        <strong>Make It Right:</strong> Fix what was affected (clean, replace, apology note, 10 "helper minutes")
-                    </div>
-                    <div class="ladder-step">
-                        <div class="step-number">5</div>
-                        <strong>Fresh Start:</strong> Quick plan together, then clean slate!
-                    </div>
-                </div>
-                
-                <div class="tools-grid" style="margin-top: 30px;">
-                    <div class="tool-card">
-                        <div class="tool-icon">🗣️</div>
-                        <div class="tool-name">Interrupting Solutions</div>
-                        <div>
-                            • Raise hand silently<br>
-                            • 5-minute conversation pause<br>
-                            • Practice patient waiting
+                    <div class="growth-item">
+                        <div class="growth-title" onclick="toggleGrowthContent(this)">
+                            1. Gentle Reminder & Redo It Right
+                        </div>
+                        <div class="growth-explanation">
+                            Quick reset - chance to do it right (0-10 seconds). Let's try that again the right way! Make right whatever you did wrong (fix what was affected, clean, replace, apology note, offer 10 helper minutes).
                         </div>
                     </div>
                     
-                    <div class="tool-card">
-                        <div class="tool-icon">💬</div>
-                        <div class="tool-name">Showing Interest</div>
-                        <div>
-                            • Ask about others' day<br>
-                            • Interview assignment (3 questions)<br>
-                            • Active listening practice
+                    <div class="growth-item">
+                        <div class="growth-title" onclick="toggleGrowthContent(this)">
+                            2. Pause & Think
+                        </div>
+                        <div class="growth-explanation">
+                            Take a break from the activity to think about better choices.
                         </div>
                     </div>
                     
-                    <div class="tool-card">
-                        <div class="tool-icon">🔊</div>
-                        <div class="tool-name">Volume Control</div>
-                        <div>
-                            • Practice whisper/indoor/outdoor<br>
-                            • Annoy-meter check (1-10)<br>
-                            • Kind ninja acts (helpful & quiet)
+                    <div class="growth-item">
+                        <div class="growth-title" onclick="toggleGrowthContent(this)">
+                            3. Take a Break from Other Things
+                        </div>
+                        <div class="growth-explanation">
+                            Take a break from other things going on to give you even more time to figure out how to address what is going on (screens, extra curriculars).
+                        </div>
+                    </div>
+                    
+                    <div class="growth-item">
+                        <div class="growth-title" onclick="toggleGrowthContent(this)">
+                            4. Fresh Start
+                        </div>
+                        <div class="growth-explanation">
+                            Quick plan together, then clean slate! We'll work together to make a plan for moving forward.
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Special Tools Section -->
-        <div id="tools" class="content-section">
-            <div class="consequences-section">
-                <h2 class="section-title">🛠️ Our Special Helper Tools</h2>
+        <!-- This Week's Goals Section -->
+        <div id="goals" class="content-section">
+            <div class="weekly-goals">
+                <h3>🎯 This Week's Goals</h3>
                 
-                <div class="tools-grid">
-                    <div class="tool-card">
-                        <div class="tool-icon">🎴</div>
-                        <div class="tool-name">Conversation Cards</div>
-                        <div>At dinner, everyone draws a card:
-                            <ul style="margin-top: 10px;">
-                                <li>"Tell about someone else's win today"</li>
-                                <li>"What did you notice someone needed?"</li>
-                                <li>"Ask about their hardest part today"</li>
-                            </ul>
-                        </div>
+                <div class="goal-item">
+                    <div class="goal-title">🗣️ Interrupting Solutions</div>
+                    <div class="goal-description">
+                        • Raise hand silently<br>
+                        • 5-minute conversation pause<br>
+                        • Practice patient waiting
                     </div>
-                    
-                    <div class="tool-card">
-                        <div class="tool-icon">💰</div>
-                        <div class="tool-name">The Interrupting Jar</div>
-                        <div>Each interruption = 25¢ or one privilege token. Money goes to the interrupted person. Watch it add up!</div>
+                </div>
+                
+                <div class="goal-item">
+                    <div class="goal-title">💬 Showing Interest</div>
+                    <div class="goal-description">
+                        • Ask about others' day<br>
+                        • Interview assignment (3 questions)<br>
+                        • Active listening practice
                     </div>
-                    
-                    <div class="tool-card">
-                        <div class="tool-icon">📊</div>
-                        <div class="tool-name">Annoy-O-Meter</div>
-                        <div>Before doing something questionable:
-                            <ol style="margin-top: 10px;">
-                                <li>Will this bug someone?</li>
-                                <li>Is it worth it?</li>
-                                <li>What could I do instead?</li>
-                            </ol>
-                        </div>
-                    </div>
-                    
-                    <div class="tool-card">
-                        <div class="tool-icon">⏱️</div>
-                        <div class="tool-name">2-Minute Rule</div>
-                        <div>After 2 minutes of talking about yourself, pivot to asking about others or lose your audience!</div>
+                </div>
+                
+                <div class="goal-item">
+                    <div class="goal-title">🔊 Volume Control</div>
+                    <div class="goal-description">
+                        • Practice whisper/indoor/outdoor<br>
+                        • Annoy-meter check (1-10)<br>
+                        • Kind ninja acts (helpful & quiet)
                     </div>
                 </div>
             </div>
@@ -1060,127 +1035,38 @@ e
         <!-- Rewards Section -->
         <div id="rewards" class="content-section">
             <div class="rewards-section">
-                <h2 class="section-title">🏆 Celebration Station</h2>
+                <h2 class="section-title">🏆 Star System</h2>
                 
-                <div class="rewards-grid">
-                    <div class="reward-card">
-                        <div class="reward-emoji">⭐</div>
-                        <div class="reward-title">Empathy Stars</div>
-                        <div class="reward-description">
-                            Show interest in others = 1 star<br>
-                            5 stars = Choose family movie or special dessert!
-                        </div>
+                <div class="star-system">
+                    <div class="star-counter">⭐⭐⭐⭐⭐</div>
+                    <div class="star-explanation">
+                        Every good deed earns a star. Every bad deed loses a star. Let's see how many stars our family can collect together!
                     </div>
                     
-                    <div class="reward-card">
-                        <div class="reward-emoji">🦸</div>
-                        <div class="reward-title">Volume Hero</div>
-                        <div class="reward-description">
-                            Full day at good volume = sticker<br>
-                            5 stickers = 15 extra screen minutes!
+                    <div class="star-rules">
+                        <div class="star-rule positive">
+                            <h4>🌟 Earn a Star</h4>
+                            <ul>
+                                <li>Following rules immediately</li>
+                                <li>Helping without being asked</li>
+                                <li>Showing kindness</li>
+                                <li>Good attitude</li>
+                                <li>Completing checklists</li>
+                            </ul>
                         </div>
-                    </div>
-                    
-                    <div class="reward-card">
-                        <div class="reward-emoji">🏅</div>
-                        <div class="reward-title">Conversation Champion</div>
-                        <div class="reward-description">
-                            No interrupting all day = marble<br>
-                            Full jar = Family celebration!
-                        </div>
-                    </div>
-                    
-                    <div class="reward-card">
-                        <div class="reward-emoji">💎</div>
-                        <div class="reward-title">Kindness Gems</div>
-                        <div class="reward-description">
-                            Unexpected helpful act = gem<br>
-                            10 gems = Special privilege!
-                        </div>
-                    </div>
-                    
-                    <div class="reward-card">
-                        <div class="reward-emoji">🌟</div>
-                        <div class="reward-title">Team Player</div>
-                        <div class="reward-description">
-                            Help without being asked = point<br>
-                            20 points = Fun family outing!
-                        </div>
-                    </div>
-                    
-                    <div class="reward-card">
-                        <div class="reward-emoji">🎯</div>
-                        <div class="reward-title">First Response Pro</div>
-                        <div class="reward-description">
-                            Respond immediately 5x = badge<br>
-                            3 badges = Stay up 30 min late!
+                        
+                        <div class="star-rule negative">
+                            <h4>💫 Lose a Star</h4>
+                            <ul>
+                                <li>Breaking family rules</li>
+                                <li>Unkind words or actions</li>
+                                <li>Not listening</li>
+                                <li>Poor attitude</li>
+                                <li>Not doing responsibilities</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        
-        <!-- Progress Section -->
-        <div id="progress" class="content-section">
-            <div class="progress-section">
-                <h2 class="progress-title">📊 Our Family Progress Tracker</h2>
-                
-                <div class="progress-bars">
-                    <div class="progress-item">
-                        <div class="progress-label">
-                            <span>Cassia - Showing Interest in Others</span>
-                            <span>🌟</span>
-                        </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar" style="width: 30%;">30%</div>
-                        </div>
-                    </div>
-                    
-                    <div class="progress-item">
-                        <div class="progress-label">
-                            <span>Julian - Volume Control</span>
-                            <span>🔊</span>
-                        </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar" style="width: 45%;">45%</div>
-                        </div>
-                    </div>
-                    
-                    <div class="progress-item">
-                        <div class="progress-label">
-                            <span>Everyone - No Interrupting</span>
-                            <span>🤐</span>
-                        </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar" style="width: 25%;">25%</div>
-                        </div>
-                    </div>
-                    
-                    <div class="progress-item">
-                        <div class="progress-label">
-                            <span>Family Teamwork</span>
-                            <span>👨‍👩‍👧‍👦</span>
-                        </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar" style="width: 60%;">60%</div>
-                        </div>
-                    </div>
-                    
-                    <div class="progress-item">
-                        <div class="progress-label">
-                            <span>Daily Kindness Acts</span>
-                            <span>💝</span>
-                        </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar" style="width: 75%;">75%</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="quote-section" style="margin-top: 30px;">
-                <div class="quote-text">"Progress, not perfection. Every small step forward is a victory worth celebrating!"</div>
-                <div class="quote-author">- Dad's Daily Reminder</div>
             </div>
         </div>
     </div>
@@ -1205,79 +1091,16 @@ e
             event.target.classList.add('active');
         }
         
-        // Celebration function
-        function celebrate() {
-            // Create confetti
-            for (let i = 0; i < 50; i++) {
-                setTimeout(() => {
-                    const confetti = document.createElement('div');
-                    confetti.className = 'confetti';
-                    confetti.style.left = Math.random() * 100 + '%';
-                    confetti.style.backgroundColor = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#DDA0DD'][Math.floor(Math.random() * 6)];
-                    confetti.style.animationDelay = Math.random() * 0.5 + 's';
-                    document.body.appendChild(confetti);
-                    
-                    setTimeout(() => confetti.remove(), 3000);
-                }, i * 50);
-            }
-            
-            // Show celebration message
-            const message = document.createElement('div');
-            message.style.cssText = `
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
-                color: white;
-                padding: 30px 50px;
-                border-radius: 20px;
-                font-size: 2em;
-                font-weight: bold;
-                z-index: 1001;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-                animation: bounceIn 0.5s ease;
-            `;
-            message.textContent = '🎉 Great Job, Team! 🎉';
-            document.body.appendChild(message);
-            
-            setTimeout(() => message.remove(), 3000);
+        // Toggle rule content
+        function toggleRuleContent(titleElement) {
+            const content = titleElement.nextElementSibling;
+            content.classList.toggle('show');
         }
         
-        // Add bounceIn animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes bounceIn {
-                0% { transform: translate(-50%, -50%) scale(0); }
-                50% { transform: translate(-50%, -50%) scale(1.2); }
-                100% { transform: translate(-50%, -50%) scale(1); }
-            }
-        `;
-        document.head.appendChild(style);
-        
-        // Progress bar animation on scroll
-        const observerOptions = {
-            threshold: 0.5
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const progressBars = entry.target.querySelectorAll('.progress-bar');
-                    progressBars.forEach(bar => {
-                        const width = bar.style.width;
-                        bar.style.width = '0';
-                        setTimeout(() => {
-                            bar.style.width = width;
-                        }, 100);
-                    });
-                }
-            });
-        }, observerOptions);
-        
-        const progressSection = document.querySelector('.progress-section');
-        if (progressSection) {
-            observer.observe(progressSection);
+        // Toggle growth content
+        function toggleGrowthContent(titleElement) {
+            const content = titleElement.nextElementSibling;
+            content.classList.toggle('show');
         }
         
         // Random motivational messages
