@@ -128,18 +128,27 @@
         }
         
         .avatar {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             background: linear-gradient(135deg, #667eea, #764ba2);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
+            font-size: 50px;
             margin-bottom: 5px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             animation: avatarBounce 3s infinite;
             animation-delay: calc(var(--delay) * 0.2s);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
         }
         
         @keyframes avatarBounce {
@@ -150,6 +159,50 @@
         .member-name {
             font-weight: bold;
             color: #5f6368;
+            font-size: 1.1em;
+        }
+        
+        /* Bible Quotes - Large and Prominent */
+        .bible-quotes {
+            background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(255,248,220,0.95));
+            border-radius: 25px;
+            padding: 50px 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            border: 4px solid rgba(255,215,0,0.4);
+            text-align: center;
+        }
+        
+        .bible-quote {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 8px solid #FFD700;
+        }
+        
+        .bible-quote:last-child {
+            margin-bottom: 0;
+        }
+        
+        .bible-text {
+            font-size: 2.2em;
+            line-height: 1.4;
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .bible-reference {
+            font-size: 1.8em;
+            color: #8B4513;
+            font-weight: bold;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         /* Navigation Tabs */
@@ -171,6 +224,7 @@
             font-weight: bold;
             color: #5f6368;
             border: 2px solid transparent;
+            font-size: 1.1em;
         }
         
         .nav-tab:hover {
@@ -209,16 +263,16 @@
         .rules-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 20px;
+            gap: 25px;
             margin-bottom: 30px;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto 30px auto;
         }
         
         .rule-card {
             background: white;
             border-radius: 20px;
-            padding: 25px;
+            padding: 30px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             transition: all 0.3s;
             position: relative;
@@ -251,8 +305,8 @@
         }
         
         .rule-icon {
-            font-size: 40px;
-            margin-bottom: 10px;
+            font-size: 50px;
+            margin-bottom: 15px;
             animation: iconWiggle 2s ease-in-out infinite;
             display: inline-block;
         }
@@ -265,24 +319,24 @@
         
         .rule-number {
             display: inline-block;
-            width: 35px;
-            height: 35px;
+            width: 45px;
+            height: 45px;
             background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
             color: white;
             border-radius: 50%;
             text-align: center;
-            line-height: 35px;
+            line-height: 45px;
             font-weight: bold;
-            margin-right: 10px;
-            font-size: 18px;
+            margin-right: 15px;
+            font-size: 22px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
         
         .rule-title {
             color: #2c3e50;
-            font-size: 1.8em;
+            font-size: 2.2em;
             font-weight: bold;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             cursor: pointer;
@@ -294,11 +348,11 @@
         
         .rule-content {
             color: #5f6368;
-            line-height: 1.7;
-            font-size: 0.95em;
+            line-height: 1.8;
+            font-size: 1.2em;
             display: none;
-            margin-top: 15px;
-            padding-top: 15px;
+            margin-top: 20px;
+            padding-top: 20px;
             border-top: 2px solid rgba(78,205,196,0.2);
             animation: fadeIn 0.3s ease;
         }
@@ -312,6 +366,25 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
+        .rule-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .rule-content li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(78,205,196,0.1);
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        
+        .rule-content li:before {
+            content: "• ";
+            color: #4ECDC4;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
         .rule-content strong {
             color: #FF6B6B;
             background: linear-gradient(90deg, rgba(255,107,107,0.1), rgba(78,205,196,0.1));
@@ -320,63 +393,82 @@
             font-weight: bold;
         }
         
-        /* Dad's Rights Section - Single Column */
-        .dads-rights {
+        /* Rules for Dad Section */
+        .dads-rules {
             background: linear-gradient(135deg, rgba(52,152,219,0.1), rgba(155,89,182,0.1));
-            border-radius: 20px;
-            padding: 25px;
+            border-radius: 25px;
+            padding: 40px;
             margin: 30px 0;
-            border: 2px solid rgba(52,152,219,0.2);
+            border: 3px solid rgba(52,152,219,0.3);
         }
         
-        .dads-rights h3 {
+        .dads-rules h2 {
             color: #3498db;
-            font-size: 1.6em;
-            margin-bottom: 20px;
+            font-size: 2.8em;
+            margin-bottom: 30px;
             text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         
-        .dads-rights-grid {
+        .dads-rules-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 15px;
-            max-width: 800px;
+            gap: 20px;
+            max-width: 900px;
             margin: 0 auto;
         }
         
-        .dad-right {
+        .dad-rule {
             background: white;
-            padding: 15px;
-            border-radius: 12px;
-            border-left: 4px solid #3498db;
-            font-size: 0.9em;
-            line-height: 1.6;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 6px solid #3498db;
             cursor: pointer;
             transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
-        .dad-right:hover {
+        .dad-rule:hover {
             background: #f0f8ff;
-            transform: translateX(5px);
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
         
-        .dad-right strong {
+        .dad-rule-title {
+            font-size: 1.6em;
+            font-weight: bold;
             color: #3498db;
+            margin-bottom: 10px;
         }
         
-        /* Growth & Learning Section */
-        .consequences-section {
+        .dad-rule-content {
+            display: none;
+            font-size: 1.2em;
+            line-height: 1.7;
+            color: #5f6368;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid rgba(52,152,219,0.2);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .dad-rule-content.show {
+            display: block;
+        }
+        
+        /* Play Cards Section */
+        .play-cards-section {
             background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,235,235,0.95));
             border-radius: 30px;
-            padding: 35px;
+            padding: 40px;
             margin-bottom: 30px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             border: 2px solid rgba(255,107,107,0.2);
         }
         
         .section-title {
-            font-size: 2.2em;
-            margin-bottom: 25px;
+            font-size: 2.5em;
+            margin-bottom: 30px;
             text-align: center;
             background: linear-gradient(45deg, #e74c3c, #f39c12);
             -webkit-background-clip: text;
@@ -384,54 +476,12 @@
             background-clip: text;
         }
         
-        .ladder-container {
-            background: white;
-            border-radius: 20px;
-            padding: 25px;
-            position: relative;
-        }
-        
-        .growth-item {
-            margin-bottom: 20px;
-        }
-        
-        .growth-title {
-            font-size: 1.4em;
-            font-weight: bold;
-            color: #e74c3c;
-            cursor: pointer;
-            padding: 15px;
-            background: white;
-            border-radius: 12px;
-            border-left: 4px solid #e74c3c;
-            transition: all 0.3s;
-        }
-        
-        .growth-title:hover {
-            background: #fff5f5;
-            transform: translateX(5px);
-        }
-        
-        .growth-explanation {
-            display: none;
-            padding: 15px;
-            margin-top: 10px;
-            background: #fff5f5;
-            border-radius: 12px;
-            border: 1px solid rgba(231,76,60,0.2);
-            animation: fadeIn 0.3s ease;
-        }
-        
-        .growth-explanation.show {
-            display: block;
-        }
-        
         /* Play Card Styles */
         .play-card {
             background: white;
             border-radius: 20px;
-            padding: 25px;
-            margin-bottom: 25px;
+            padding: 30px;
+            margin-bottom: 30px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             border: 3px solid rgba(78,205,196,0.3);
         }
@@ -439,29 +489,30 @@
         .play-card-header {
             background: linear-gradient(135deg, #4ECDC4, #45B7D1);
             color: white;
-            padding: 20px;
+            padding: 25px;
             border-radius: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
         .play-card-header h4 {
-            font-size: 1.5em;
+            font-size: 1.8em;
             margin-bottom: 10px;
         }
         
         .play-step {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         
         .play-step-title {
             background: #f8f9fa;
-            padding: 15px;
+            padding: 20px;
             border-radius: 12px;
             border-left: 4px solid #4ECDC4;
             cursor: pointer;
             font-weight: bold;
             color: #2c3e50;
             transition: all 0.3s;
+            font-size: 1.2em;
         }
         
         .play-step-title:hover {
@@ -471,54 +522,33 @@
         
         .play-step-content {
             display: none;
-            padding: 15px;
+            padding: 20px;
             margin-top: 10px;
             background: #fff5f5;
             border-radius: 12px;
             border: 1px solid rgba(78,205,196,0.2);
             animation: fadeIn 0.3s ease;
-            line-height: 1.6;
+            line-height: 1.7;
+            font-size: 1.1em;
         }
         
         .play-step-content.show {
             display: block;
         }
         
-        .quick-reference {
-            background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,193,7,0.1));
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 30px;
-            border: 2px solid rgba(255,215,0,0.3);
-        }
-        
-        .quick-reference h4 {
-            color: #f39c12;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        
-        .quick-ref-item {
-            padding: 10px;
-            margin-bottom: 8px;
-            background: white;
-            border-radius: 8px;
-            border-left: 3px solid #f39c12;
-        }
-        
         /* Goals Section - Interactive Dashboard */
         .weekly-goals {
             background: linear-gradient(135deg, rgba(39,174,96,0.1), rgba(46,204,113,0.1));
-            border-radius: 20px;
-            padding: 25px;
+            border-radius: 25px;
+            padding: 35px;
             margin: 30px 0;
-            border: 2px solid rgba(39,174,96,0.2);
+            border: 3px solid rgba(39,174,96,0.3);
         }
         
         .weekly-goals h3 {
             color: #27ae60;
-            font-size: 1.8em;
-            margin-bottom: 20px;
+            font-size: 2.2em;
+            margin-bottom: 25px;
             text-align: center;
         }
         
@@ -823,8 +853,16 @@
                 font-size: 2.5em;
             }
             
+            .bible-text {
+                font-size: 1.6em;
+            }
+            
+            .bible-reference {
+                font-size: 1.3em;
+            }
+            
             .rules-grid,
-            .dads-rights-grid,
+            .dads-rules-grid,
             .star-rules {
                 grid-template-columns: 1fr;
             }
@@ -839,7 +877,7 @@
             }
             
             .rule-title {
-                font-size: 1.4em;
+                font-size: 1.6em;
             }
         }
     </style>
@@ -859,19 +897,27 @@
             
             <div class="family-avatar-row">
                 <div class="family-member" style="--delay: 0;">
-                    <div class="avatar">👨</div>
+                    <div class="avatar">
+                        <img src="dad.jpg" alt="Dad" onerror="this.parentElement.innerHTML='👨'">
+                    </div>
                     <div class="member-name">Dad</div>
                 </div>
                 <div class="family-member" style="--delay: 1;">
-                    <div class="avatar">👨‍🦱</div>
+                    <div class="avatar">
+                        <img src="antoine.jpg" alt="Antoine" onerror="this.parentElement.innerHTML='👨‍🦱'">
+                    </div>
                     <div class="member-name">Antoine</div>
                 </div>
                 <div class="family-member" style="--delay: 2;">
-                    <div class="avatar">👧</div>
+                    <div class="avatar">
+                        <img src="cassia.jpg" alt="Cassia" onerror="this.parentElement.innerHTML='👧'">
+                    </div>
                     <div class="member-name">Cassia</div>
                 </div>
                 <div class="family-member" style="--delay: 3;">
-                    <div class="avatar">👦</div>
+                    <div class="avatar">
+                        <img src="julian.jpg" alt="Julian" onerror="this.parentElement.innerHTML='👦'">
+                    </div>
                     <div class="member-name">Julian</div>
                 </div>
             </div>
@@ -879,18 +925,26 @@
         
         <!-- Navigation -->
         <div class="nav-tabs">
-            <div class="nav-tab active" onclick="showSection('rules')">🌟 Our Guidelines</div>
-            <div class="nav-tab" onclick="showSection('growth')">🌱 Growth & Learning</div>
+            <div class="nav-tab active" onclick="showSection('guidelines')">🌟 Our Guidelines</div>
+            <div class="nav-tab" onclick="showSection('dads-rules')">🛡️ Rules for Dad</div>
+            <div class="nav-tab" onclick="showSection('play-cards')">🎮 Play Cards</div>
             <div class="nav-tab" onclick="showSection('goals')">🎯 This Week's Goals</div>
             <div class="nav-tab" onclick="showSection('checklist')">✅ Daily Wins</div>
             <div class="nav-tab" onclick="showSection('rewards')">🏆 Celebrations</div>
         </div>
         
-        <!-- Rules Section -->
-        <div id="rules" class="content-section active">
-            <div class="quote-section">
-                <div class="quote-text"><strong>Ephesians 4:32:</strong> "Be kind and compassionate to one another, forgiving each other, just as in Christ God forgave you."</div>
-                <div class="quote-text"><strong>Ephesians 6:4:</strong> "Fathers, do not provoke your children to anger, but bring them up in the discipline and instruction of the Lord."</div>
+        <!-- Guidelines Section -->
+        <div id="guidelines" class="content-section active">
+            <!-- Bible Quotes - Large and Prominent -->
+            <div class="bible-quotes">
+                <div class="bible-quote">
+                    <div class="bible-text">"Be kind and compassionate to one another, forgiving each other, just as in Christ God forgave you."</div>
+                    <div class="bible-reference">Ephesians 4:32</div>
+                </div>
+                <div class="bible-quote">
+                    <div class="bible-text">"Fathers, do not provoke your children to anger, but bring them up in the discipline and instruction of the Lord."</div>
+                    <div class="bible-reference">Ephesians 6:4</div>
+                </div>
             </div>
             
             <div class="rules-grid">
@@ -901,9 +955,12 @@
                         Bodies & Space
                     </div>
                     <div class="rule-content">
-                        Keep hands/feet/objects to yourself. <strong>Don't hit, push, or hurt anyone.</strong> <strong>"Stop" means stop immediately.</strong> Respect others' bubble - if someone moves away, don't follow.
-                        <br><br>
-                        <strong>Example:</strong> Touching after "Stop"? → Redo (hands in pockets, move 2 steps back) → If repeated: separate space for 15 min and 10 repair minutes helping the sibling (or do their quick chore).
+                        <ul>
+                            <li>Keep hands/feet/objects to yourself</li>
+                            <li><strong>Don't hit, push, or hurt anyone</strong></li>
+                            <li><strong>"Stop" means stop immediately</strong></li>
+                            <li>Respect others' bubble - if someone moves away, don't follow</li>
+                        </ul>
                     </div>
                 </div>
                 
@@ -914,9 +971,12 @@
                         Attention
                     </div>
                     <div class="rule-content">
-                        Pay attention when you are spoken to and respond to show respect. If you need time to respond, say so—that is OK too. But remember that Dad has the responsibility to keep us going, so he has to have the authority and opportunity to do so, and that starts with listening and responding.
-                        <br><br>
-                        <strong>Example:</strong> No "Got it" or plan ask? → Redo the response → If repeated: screen pause per ladder until the first step is started.
+                        <ul>
+                            <li>Pay attention when you are spoken to and respond to show respect</li>
+                            <li>If you need time to respond, say so—that is OK too</li>
+                            <li>Dad has the responsibility to keep us going, so he needs authority</li>
+                            <li>That authority starts with listening and responding</li>
+                        </ul>
                     </div>
                 </div>
                 
@@ -927,9 +987,14 @@
                         Stewardship
                     </div>
                     <div class="rule-content">
-                        Take care of what is entrusted to you—yourself, above all, and things that are given to you. Try to only put things back where they belong, but leave things better than you found them. If you see something that should be thrown away, even if you didn't leave it there, throw it away. We are a team, a family.
-                        <br><br>
-                        <strong>Example:</strong> Gear left out? → Redo → Holding Shelf until tomorrow or earn-back with a 2-minute tidy.
+                        <ul>
+                            <li>Take care of what is entrusted to you—yourself, above all</li>
+                            <li>Take care of things that are given to you</li>
+                            <li>Put things back where they belong</li>
+                            <li>Leave things better than you found them</li>
+                            <li>If you see something that should be thrown away, throw it away</li>
+                            <li>We are a team, a family</li>
+                        </ul>
                     </div>
                 </div>
                 
@@ -940,9 +1005,13 @@
                         First Things First
                     </div>
                     <div class="rule-content">
-                        Everyone wants to do the fun things first. But the first things come first. The first things are our responsibilities. Morning/Evening checklists, homework, chores. <strong>When these things are done, then it's time for fun.</strong>
-                        <br><br>
-                        <strong>Example:</strong> Screens before checklist? → Screen pauses; do checklist; resume when done. Chronic tardy mornings: you "pay back" lost dad time with one quick help-job after school.
+                        <ul>
+                            <li>Everyone wants to do the fun things first</li>
+                            <li>But the first things come first</li>
+                            <li>The first things are our responsibilities</li>
+                            <li>Morning/Evening checklists, homework, chores</li>
+                            <li><strong>When these things are done, then it's time for fun</strong></li>
+                        </ul>
                     </div>
                 </div>
                 
@@ -953,9 +1022,11 @@
                         Honesty is the Only Policy
                     </div>
                     <div class="rule-content">
-                        Tell the truth. If you break/forget/hurt: <strong>own it → apologize → repair it.</strong> "God can save the sinner you are, not the saint you pretend to be."
-                        <br><br>
-                        <strong>Example:</strong> Admit damage right away: help fix/replace; praise honesty. If hidden: same repair + extra repair minutes.
+                        <ul>
+                            <li>Tell the truth</li>
+                            <li>If you break/forget/hurt: <strong>own it → apologize → repair it</strong></li>
+                            <li>"God can save the sinner you are, not the saint you pretend to be"</li>
+                        </ul>
                     </div>
                 </div>
                 
@@ -966,9 +1037,11 @@
                         Think of Others First
                     </div>
                     <div class="rule-content">
-                        Sometimes we can hurt each other when we never even imagined that could be possible. So we need to ask ourselves how what we are going to say or do is going to make someone else feel (not just how it might make us feel).
-                        <br><br>
-                        <strong>Example:</strong> Rude tone/name-calling? → Redo the sentence respectfully → If repeated: conversation pause (10 min) + apology/repair (kind note or act).
+                        <ul>
+                            <li>Sometimes we can hurt each other when we never even imagined that could be possible</li>
+                            <li>Ask yourself how what you're going to say or do will make someone else feel</li>
+                            <li>Don't just think about how it might make you feel</li>
+                        </ul>
                     </div>
                 </div>
                 
@@ -979,9 +1052,13 @@
                         Screen Time
                     </div>
                     <div class="rule-content">
-                        God did not create you to just look at a screen but also to look at the world and other people. Don't just consume what other people are doing, but do things yourselves so you can figure out what unique talents God has given you and what will give you purpose and happiness.
-                        <br><br>
-                        <strong>Example:</strong> Device in off-limits place or time? → Park device for remainder of the hour (1st) → rest of afternoon/evening (2nd) → rest of day (3rd).
+                        <ul>
+                            <li>God did not create you to just look at a screen</li>
+                            <li>Also look at the world and other people</li>
+                            <li>Don't just consume what other people are doing</li>
+                            <li>Do things yourselves to discover your unique talents</li>
+                            <li>Figure out what God has given you and what will give you purpose and happiness</li>
+                        </ul>
                     </div>
                 </div>
                 
@@ -992,108 +1069,188 @@
                         We Are More Than a Team
                     </div>
                     <div class="rule-content">
-                        We are a Family. Don't always worry if someone else's task is more difficult than yours, or if someone else got something you didn't. Comparison is the thief of joy. And especially when we are all in the same boat. <strong>Sibling Peace Code:</strong> If used successfully → bonus praise/token. If they escalate: both kids to calm space → redo Peace Code → repair.
+                        <ul>
+                            <li>We are a Family</li>
+                            <li>Don't always worry if someone else's task is more difficult than yours</li>
+                            <li>Don't worry if someone else got something you didn't</li>
+                            <li>Comparison is the thief of joy</li>
+                            <li>We are all in the same boat</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="rule-card">
+                    <div class="rule-icon">🕊️</div>
+                    <div class="rule-title" onclick="toggleRuleContent(this)">
+                        <span class="rule-number">9</span>
+                        Sibling Peace Code
+                    </div>
+                    <div class="rule-content">
+                        <ul>
+                            <li>When siblings disagree, use the Peace Code first</li>
+                            <li>Step 1: "I feel..." (state your feeling)</li>
+                            <li>Step 2: "When you..." (describe the action, not attacking the person)</li>
+                            <li>Step 3: "Please..." (make a specific request)</li>
+                            <li>If used successfully → bonus praise/token</li>
+                            <li>If escalation happens: both kids to calm space → redo Peace Code → repair</li>
+                        </ul>
                     </div>
                 </div>
                 
                 <div class="rule-card">
                     <div class="rule-icon">🛡️</div>
                     <div class="rule-title" onclick="toggleRuleContent(this)">
-                        <span class="rule-number">9</span>
+                        <span class="rule-number">10</span>
                         Obedience
                     </div>
                     <div class="rule-content">
-                        Dad may not always be right, and you will have a chance to reason with him. But sometimes, you will have to accept his decision. This is important and a commandment from God. It is not arbitrary but by design. Dad has been around longer, and plus you have to have someone to decide—think of the example of Buridan's Donkey. We need a final authority.
-                        <br><br>
-                        <strong>Example:</strong> Misuse of tools/bikes/kitchen? → Immediate pause for the day; review safety; earn-back with supervised use + repair if any damage.
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Dad's Rights Section -->
-            <div class="dads-rights">
-                <h3>🛡️ Children's Rights (What You Can Expect from Dad)</h3>
-                <div class="dads-rights-grid">
-                    <div class="dad-right" onclick="toggleDadRightContent(this)">
-                        <strong>1. Calm voice & respect.</strong> Dad uses a calm voice—no yelling, mocking, or shaming. If he's heated, he calls a 60-second Pause and resets.
-                    </div>
-                    <div class="dad-right" onclick="toggleDadRightContent(this)">
-                        <strong>2. Clear expectations.</strong> Dad shows what "done" looks like in one sentence or with a picture.
-                    </div>
-                    <div class="dad-right" onclick="toggleDadRightContent(this)">
-                        <strong>3. Chance to make it right.</strong> Before any consequence, there's a Repair Window: 5 minutes on a visible timer to fix the issue.
-                    </div>
-                    <div class="dad-right" onclick="toggleDadRightContent(this)">
-                        <strong>4. Daily 1:1 time (15 min each).</strong> Antoine, Cassia, and Julian each get 15 minutes of distraction-free Special Time. Missed time is made up within 48 hours.
-                    </div>
-                    <div class="dad-right" onclick="toggleDadRightContent(this)">
-                        <strong>5. Opinions are heard.</strong> Dad listens fully, repeats back what he heard, considers it, and explains the decision (even when it's "no").
-                    </div>
-                    <div class="dad-right" onclick="toggleDadRightContent(this)">
-                        <strong>6. One appeal.</strong> You may make one respectful appeal per decision with new info; Dad will reconsider once, quickly.
-                    </div>
-                    <div class="dad-right" onclick="toggleDadRightContent(this)">
-                        <strong>7. Focused attention.</strong> When you need help, Dad gives a 5-minute Focus Window—no phone or computer—to start/finish a task.
-                    </div>
-                    <div class="dad-right" onclick="toggleDadRightContent(this)">
-                        <strong>8. Explanations, not just orders.</strong> For non-urgent things, Dad explains the "why." For urgent/safety: follow now, explain right after.
-                    </div>
-                    <div class="dad-right" onclick="toggleDadRightContent(this)">
-                        <strong>9. Real apology & repair.</strong> Dad uses the 3 R's—Recognize, Repair, Restore (and models the redo).
-                    </div>
-                    <div class="dad-right" onclick="toggleDadRightContent(this)">
-                        <strong>10. Same cleanliness rules.</strong> Dad follows the same reset rules as everyone.
+                        <ul>
+                            <li>Dad may not always be right, and you will have a chance to reason with him</li>
+                            <li>Sometimes, you will have to accept his decision</li>
+                            <li>This is important and a commandment from God</li>
+                            <li>It is not arbitrary but by design</li>
+                            <li>Dad has been around longer</li>
+                            <li>You have to have someone to decide—think of Buridan's Donkey</li>
+                            <li>We need a final authority</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Growth & Learning Section -->
-        <div id="growth" class="content-section">
-            <div class="consequences-section">
-                <h2 class="section-title">🌱 How We Learn & Grow</h2>
-                
-                <h3 style="text-align: center; color: #27ae60; margin-bottom: 25px;">Section 1: Our Family Principles</h3>
-                
-                <div class="ladder-container">
-                    <div class="growth-item">
-                        <div class="growth-title" onclick="toggleGrowthContent(this)">
-                            1. Gentle Reminder & Redo It Right (0-10 seconds)
-                        </div>
-                        <div class="growth-explanation">
-                            Quick reset - chance to do it right. Try it again the right way—kind words + the right action. If something got messy or feelings got bumped, make it right fast (fix, clean, replace, short apology, or offer 10 helper minutes).
+        <!-- Rules for Dad Section -->
+        <div id="dads-rules" class="content-section">
+            <div class="dads-rules">
+                <h2>🛡️ Rules for Dad</h2>
+                <div class="dads-rules-grid">
+                    <div class="dad-rule" onclick="toggleDadRuleContent(this)">
+                        <div class="dad-rule-title">1. Calm voice & respect</div>
+                        <div class="dad-rule-content">
+                            Dad uses a calm voice—no yelling, mocking, or shaming. If he's heated, he calls a 60-second Pause and resets.
                         </div>
                     </div>
-                    
-                    <div class="growth-item">
-                        <div class="growth-title" onclick="toggleGrowthContent(this)">
-                            2. Pause & Think (2-5 minutes)
-                        </div>
-                        <div class="growth-explanation">
-                            Tiny pit stop. Breathe, write your Next Right Step, then do it. Timer is visible so time doesn't feel endless.
+                    <div class="dad-rule" onclick="toggleDadRuleContent(this)">
+                        <div class="dad-rule-title">2. Clear expectations</div>
+                        <div class="dad-rule-content">
+                            Dad shows what "done" looks like in one sentence or with a picture.
                         </div>
                     </div>
-                    
-                    <div class="growth-item">
-                        <div class="growth-title" onclick="toggleGrowthContent(this)">
-                            3. Break & Earn-Back
-                        </div>
-                        <div class="growth-explanation">
-                            Short pause for screens/calls/shopping until a small job is finished. There's always a fast, clear way to earn it back right away.
+                    <div class="dad-rule" onclick="toggleDadRuleContent(this)">
+                        <div class="dad-rule-title">3. Chance to make it right</div>
+                        <div class="dad-rule-content">
+                            Before any consequence, there's a Repair Window: 5 minutes on a visible timer to fix the issue.
                         </div>
                     </div>
-                    
-                    <div class="growth-item">
-                        <div class="growth-title" onclick="toggleGrowthContent(this)">
-                            4. Fresh Start
+                    <div class="dad-rule" onclick="toggleDadRuleContent(this)">
+                        <div class="dad-rule-title">4. Daily 1:1 time (15 min each)</div>
+                        <div class="dad-rule-content">
+                            Antoine, Cassia, and Julian each get 15 minutes of distraction-free Special Time. Missed time is made up within 48 hours.
                         </div>
-                        <div class="growth-explanation">
-                            We pick one small change to try for a week (a tool, a swap, or a reminder). Clean slate.
+                    </div>
+                    <div class="dad-rule" onclick="toggleDadRuleContent(this)">
+                        <div class="dad-rule-title">5. Opinions are heard</div>
+                        <div class="dad-rule-content">
+                            Dad listens fully, repeats back what he heard, considers it, and explains the decision (even when it's "no").
+                        </div>
+                    </div>
+                    <div class="dad-rule" onclick="toggleDadRuleContent(this)">
+                        <div class="dad-rule-title">6. One appeal</div>
+                        <div class="dad-rule-content">
+                            You may make one respectful appeal per decision with new info; Dad will reconsider once, quickly.
+                        </div>
+                    </div>
+                    <div class="dad-rule" onclick="toggleDadRuleContent(this)">
+                        <div class="dad-rule-title">7. Focused attention</div>
+                        <div class="dad-rule-content">
+                            When you need help, Dad gives a 5-minute Focus Window—no phone or computer—to start/finish a task.
+                        </div>
+                    </div>
+                    <div class="dad-rule" onclick="toggleDadRuleContent(this)">
+                        <div class="dad-rule-title">8. Explanations, not just orders</div>
+                        <div class="dad-rule-content">
+                            For non-urgent things, Dad explains the "why." For urgent/safety: follow now, explain right after.
+                        </div>
+                    </div>
+                    <div class="dad-rule" onclick="toggleDadRuleContent(this)">
+                        <div class="dad-rule-title">9. Real apology & repair</div>
+                        <div class="dad-rule-content">
+                            Dad uses the 3 R's—Recognize, Repair, Restore (and models the redo).
+                        </div>
+                    </div>
+                    <div class="dad-rule" onclick="toggleDadRuleContent(this)">
+                        <div class="dad-rule-title">10. Same cleanliness rules</div>
+                        <div class="dad-rule-content">
+                            Dad follows the same reset rules as everyone.
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        
+        <!-- Play Cards Section -->
+        <div id="play-cards" class="content-section">
+            <div class="play-cards-section">
+                <h2 class="section-title">🎮 Individual Play Cards</h2>
                 
-                <h3 style="text-align: center; color: #e74c3c; margin: 40px 0 25px 0;">Section 2: Individual Play Cards</h3>
+                <!-- Dad's Play Card -->
+                <div class="play-card">
+                    <div class="play-card-header">
+                        <h4>Dad — Your Play Card</h4>
+                        <p><strong>Goal:</strong> Patient, consistent leadership. Model the way. <strong>Reset tools:</strong> 60-second pause, repair windows, family huddles.</p>
+                    </div>
+                    
+                    <div class="play-step">
+                        <div class="play-step-title" onclick="togglePlayContent(this)">
+                            1) Gentle Reset (0-10s)
+                        </div>
+                        <div class="play-step-content">
+                            <strong>When:</strong> Voice getting sharp or impatient tone slipping out.<br>
+                            <strong>Do now:</strong> "Reset please - calm voice" (to myself). Take one breath. Lower voice 20%.<br>
+                            <strong>Make it right:</strong> "I was getting sharp - let me try that again with my calm voice."<br>
+                            <strong>Done:</strong> Same message delivered calmly + request completed.
+                        </div>
+                    </div>
+                    
+                    <div class="play-step">
+                        <div class="play-step-title" onclick="togglePlayContent(this)">
+                            2) Pause & Think (60 seconds)
+                        </div>
+                        <div class="play-step-content">
+                            <strong>When:</strong> Feeling heated or wanting to lecture.<br>
+                            <strong>Do now:</strong> "60-second dad pause" aloud. Step away if needed. Ask: "What does success look like here?"<br>
+                            <strong>Come back with:</strong> One clear expectation + one tool to help them succeed.<br>
+                            <strong>Done:</strong> Clear, calm direction given with support offered.
+                        </div>
+                    </div>
+                    
+                    <div class="play-step">
+                        <div class="play-step-title" onclick="togglePlayContent(this)">
+                            3) Repair Window
+                        </div>
+                        <div class="play-step-content">
+                            <strong>When:</strong> I made a mistake in my response or broke one of my own rules.<br>
+                            <strong>Do now:</strong> Use the 3 R's immediately:<br>
+                            • Recognize: "I was too sharp/impatient/unfair"<br>
+                            • Repair: "Let me redo that"<br>
+                            • Restore: Model the right way + offer a fresh start<br>
+                            <strong>Done:</strong> 3 R's complete + situation reset with child.
+                        </div>
+                    </div>
+                    
+                    <div class="play-step">
+                        <div class="play-step-title" onclick="togglePlayContent(this)">
+                            4) Family Huddle (fresh start)
+                        </div>
+                        <div class="play-step-content">
+                            <strong>When:</strong> Pattern of struggle for any family member.<br>
+                            <strong>Do now:</strong> Call 5-minute family huddle. Focus on solutions:<br>
+                            • "What's working?"<br>
+                            • "What's one thing we could try differently?"<br>
+                            • "How can we help each other succeed?"<br>
+                            <strong>Done:</strong> One new strategy agreed on by everyone.
+                        </div>
+                    </div>
+                </div>
                 
                 <!-- Antoine's Play Card -->
                 <div class="play-card">
@@ -1277,15 +1434,6 @@
                             <strong>Done:</strong> You teach Dad the tool and use it tonight.
                         </div>
                     </div>
-                </div>
-                
-                <!-- Quick Reference -->
-                <div class="quick-reference">
-                    <h4>Fast Earn-Backs (Quick Reference)</h4>
-                    <div class="quick-ref-item"><strong>Antoine:</strong> Games come back when the Kind Ladder + kitchen step are done.</div>
-                    <div class="quick-ref-item"><strong>Cassia:</strong> Friend call / 10-minute browsing comes back after your zone photo (Big Three).</div>
-                    <div class="quick-ref-item"><strong>Julian:</strong> YouTube/Roblox comes back right after Launchpad is loaded or 5 runs are done.</div>
-                    <div class="quick-ref-item"><strong>Everyone:</strong> Park time helps bodies reset—ask for it when you're wiggly.</div>
                 </div>
             </div>
         </div>
@@ -1499,15 +1647,9 @@
             content.classList.toggle('show');
         }
         
-        // Toggle dad's rights content
-        function toggleDadRightContent(rightElement) {
-            // For now, just add a hover effect - could expand with more detail
-            rightElement.style.background = rightElement.style.background === 'rgb(240, 248, 255)' ? 'white' : '#f0f8ff';
-        }
-        
-        // Toggle growth content
-        function toggleGrowthContent(titleElement) {
-            const content = titleElement.nextElementSibling;
+        // Toggle dad's rules content
+        function toggleDadRuleContent(ruleElement) {
+            const content = ruleElement.querySelector('.dad-rule-content');
             content.classList.toggle('show');
         }
         
