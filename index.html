@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Nahas Family Constitution</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Merriweather:wght@400;700&family=Source+Sans+Pro:wght@400;600;700&display=swap');
         
         * {
             margin: 0;
@@ -14,11 +14,15 @@
         }
         
         body {
-            font-family: 'EB Garamond', serif;
-            line-height: 1.8;
-            color: #2c3e50;
+            font-family: 'Crimson Text', Georgia, 'Times New Roman', serif;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.7;
+            color: #1a1a1a;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         
         .constitution-container {
@@ -49,25 +53,28 @@
         }
         
         header::before {
-            content: '✝';
+            content: '☦';
             position: absolute;
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 40px;
+            font-size: 45px;
             opacity: 0.3;
+            font-weight: bold;
         }
         
         h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 3em;
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 3.2em;
+            font-weight: 700;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            letter-spacing: 3px;
+            letter-spacing: 2px;
         }
         
         .subtitle {
-            font-size: 1.3em;
+            font-size: 1.4em;
+            font-weight: 600;
             font-style: italic;
             opacity: 0.95;
         }
@@ -81,9 +88,11 @@
             border-left: 5px solid #D4AF37;
             padding: 30px;
             margin: 40px 0;
-            font-size: 1.1em;
+            font-size: 1.2em;
+            font-weight: 600;
             border-radius: 5px;
             position: relative;
+            line-height: 1.6;
         }
         
         .preamble::before {
@@ -94,12 +103,14 @@
             top: -10px;
             left: 10px;
             opacity: 0.3;
+            font-weight: bold;
         }
         
         h2 {
-            font-family: 'Playfair Display', serif;
-            color: #2c3e50;
-            font-size: 2.2em;
+            font-family: 'Merriweather', Georgia, serif;
+            color: #1a1a1a;
+            font-size: 2.4em;
+            font-weight: 700;
             margin: 50px 0 30px 0;
             padding-bottom: 15px;
             border-bottom: 3px solid #D4AF37;
@@ -107,9 +118,10 @@
         }
         
         h3 {
-            font-family: 'Playfair Display', serif;
-            color: #34495e;
-            font-size: 1.6em;
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            color: #2d2d2d;
+            font-size: 1.7em;
+            font-weight: 700;
             margin: 30px 0 20px 0;
             padding-left: 20px;
             border-left: 4px solid #764ba2;
@@ -129,6 +141,13 @@
             padding: 0;
             color: #667eea;
             margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .mission-box p {
+            font-size: 1.1em;
+            font-weight: 600;
+            line-height: 1.6;
         }
         
         .scripture {
@@ -137,8 +156,11 @@
             padding: 15px 20px;
             margin: 20px 0;
             font-style: italic;
-            color: #7f8c8d;
+            font-weight: 600;
+            font-size: 1.05em;
+            color: #6b6b6b;
             position: relative;
+            line-height: 1.6;
         }
         
         .scripture::before {
@@ -184,8 +206,17 @@
         
         .virtue-card h4 {
             color: #667eea;
-            font-size: 1.3em;
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            font-size: 1.4em;
+            font-weight: 700;
             margin-bottom: 10px;
+        }
+        
+        .virtue-card p {
+            font-size: 1.05em;
+            font-weight: 500;
+            line-height: 1.5;
+            color: #333;
         }
         
         .family-first-rules {
@@ -221,10 +252,24 @@
         }
         
         .rule-title {
-            font-size: 1.4em;
-            color: #2c3e50;
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            font-size: 1.5em;
+            color: #1a1a1a;
             margin-bottom: 10px;
-            font-weight: 600;
+            font-weight: 700;
+        }
+        
+        .rule-item p {
+            font-size: 1.05em;
+            font-weight: 500;
+            line-height: 1.6;
+            color: #2d2d2d;
+        }
+        
+        .rule-item em {
+            font-size: 0.95em;
+            color: #555;
+            font-weight: 500;
         }
         
         .consequence-ladder {
@@ -291,6 +336,7 @@
             border-collapse: collapse;
             margin: 30px 0;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            font-family: 'Source Sans Pro', Arial, sans-serif;
         }
         
         .daily-rhythm-table th {
@@ -299,12 +345,21 @@
             padding: 15px;
             text-align: left;
             font-size: 1.2em;
+            font-weight: 700;
         }
         
         .daily-rhythm-table td {
             padding: 12px 15px;
             border-bottom: 1px solid #e0e0e0;
             background: white;
+            font-size: 1.05em;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+        
+        .daily-rhythm-table td strong {
+            font-weight: 700;
+            color: #1a1a1a;
         }
         
         .daily-rhythm-table tr:hover td {
@@ -337,10 +392,18 @@
         }
         
         .principle-title {
-            font-size: 1.3em;
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            font-size: 1.4em;
             color: #667eea;
             margin-bottom: 10px;
-            font-weight: 600;
+            font-weight: 700;
+        }
+        
+        .principle-box p {
+            font-size: 1.05em;
+            font-weight: 500;
+            line-height: 1.5;
+            color: #333;
         }
         
         .signature-section {
@@ -383,6 +446,8 @@
             border: none;
             padding: 0;
             margin-bottom: 20px;
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            font-weight: 700;
         }
         
         .toc ul {
@@ -394,6 +459,9 @@
             margin: 10px 0;
             position: relative;
             padding-left: 20px;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #2d2d2d;
         }
         
         .toc li::before {
@@ -401,14 +469,463 @@
             position: absolute;
             left: 0;
             color: #667eea;
+            font-weight: bold;
+        }
+
+        .other-virtues-list {
+            background: #f0f4ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .other-virtues-list h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            font-size: 1.3em;
+            font-weight: 700;
+        }
+
+        .other-virtues-list ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .other-virtues-list li {
+            padding: 8px;
+            background: white;
+            border-radius: 5px;
+            border-left: 3px solid #667eea;
+            padding-left: 15px;
+            font-size: 1.05em;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .immediate-reset-tools {
+            background: #e8f5e9;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .immediate-reset-tools h3 {
+            border-left: 4px solid #4caf50;
+            color: #2e7d32;
+            font-weight: 700;
+        }
+
+        .reset-tool-item {
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            border-left: 3px solid #4caf50;
+            font-size: 1.05em;
+            line-height: 1.5;
+        }
+
+        .reset-tool-item strong {
+            color: #2e7d32;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 700;
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+        }
+
+        .appeal-process {
+            background: #fff3e0;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border: 1px solid #ff9800;
+        }
+
+        .appeal-process h3 {
+            border-left: 4px solid #ff9800;
+            color: #e65100;
+            font-weight: 700;
+        }
+
+        .appeal-process p {
+            font-size: 1.05em;
+            font-weight: 500;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        /* General paragraph and body text improvements */
+        p {
+            font-size: 1.05em;
+            font-weight: 500;
+            line-height: 1.6;
+            color: #2d2d2d;
+            margin-bottom: 15px;
+        }
+
+        /* List improvements */
+        ul, ol {
+            font-size: 1.05em;
+            font-weight: 500;
+            line-height: 1.6;
+            color: #2d2d2d;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        em {
+            font-weight: 500;
         }
         
         @media print {
-            body {
-                background: white;
+            @page {
+                margin: 0.75in;
+                size: letter;
             }
+            
+            body {
+                background: white !important;
+                color: black !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
             .constitution-container {
-                box-shadow: none;
+                box-shadow: none !important;
+                max-width: none !important;
+                margin: 0 !important;
+            }
+            
+            .constitution-container::before {
+                background: linear-gradient(90deg, #8B7355, #D4AF37, #8B7355) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            /* Page 1: Cover */
+            header {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                page-break-after: always;
+                min-height: 8in;
+            }
+            
+            /* Page 2: Table of Contents */
+            .toc {
+                page-break-after: always;
+                min-height: 6in;
+            }
+            
+            /* Page 3: Preamble gets its own page */
+            .preamble {
+                page-break-before: always;
+                page-break-after: always;
+                page-break-inside: avoid;
+            }
+            
+            /* Major sections start on new pages */
+            h2 {
+                page-break-before: always;
+                page-break-after: avoid;
+                margin-top: 0 !important;
+            }
+            
+            /* Exception for first h2 after preamble */
+            h2:first-of-type {
+                page-break-before: auto;
+            }
+            
+            h3 {
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+            
+            /* Keep content blocks together */
+            .mission-box,
+            .scripture,
+            .virtue-card,
+            .rule-item,
+            .three-rs-diagram,
+            .daily-rhythm-table,
+            .principle-box,
+            .other-virtues-list,
+            .immediate-reset-tools,
+            .appeal-process,
+            .principles-visual {
+                page-break-inside: avoid;
+                margin-bottom: 20px !important;
+            }
+
+            /* Keep virtue grids together */
+            .virtues-grid {
+                page-break-inside: avoid;
+                page-break-before: avoid;
+            }
+            
+            /* Ensure virtues section content stays together */
+            .virtues-grid + .other-virtues-list {
+                page-break-before: avoid;
+            }
+
+            /* FAMILY FIRST rules get dedicated pages */
+            .family-first-rules {
+                page-break-before: always;
+            }
+            
+            /* 3 R's diagram should stay together */
+            .three-rs-diagram {
+                page-break-inside: avoid;
+                page-break-before: avoid;
+            }
+            
+            /* Daily rhythm table should not break */
+            .daily-rhythm-table {
+                page-break-inside: avoid;
+            }
+            
+            /* Governance section should stay together */
+            .mission-box + p,
+            .appeal-process {
+                page-break-before: avoid;
+            }
+            
+            /* Dad's commitment section should stay together */
+            .scripture + div[style*="background: #e8f5e9"] {
+                page-break-before: avoid;
+                page-break-inside: avoid;
+            }
+            
+            /* Signature section gets its own page */
+            .signature-section {
+                page-break-before: always;
+                min-height: 6in;
+            }
+            
+            /* Avoid orphaned lines */
+            p {
+                orphans: 3;
+                widows: 3;
+            }
+            
+            /* Keep lists together when possible */
+            ul, ol {
+                page-break-inside: avoid;
+            }
+            
+            /* Avoid breaking after colons or opening quotes */
+            p:has(+ .scripture),
+            p:has(+ .mission-box),
+            p:has(+ .virtues-grid),
+            p:has(+ table) {
+                page-break-after: avoid;
+            }
+            
+            .preamble {
+                background: #f8f9fa !important;
+                border-left: 5px solid #D4AF37 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .preamble::before {
+                color: #D4AF37 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            h2 {
+                border-bottom: 3px solid #D4AF37 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            h3 {
+                border-left: 4px solid #764ba2 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .mission-box {
+                background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%) !important;
+                border: 2px solid #667eea !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .mission-box h3 {
+                color: #667eea !important;
+                border: none !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .scripture {
+                background: #fef9e7 !important;
+                border-left: 4px solid #f39c12 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .virtue-card {
+                background: white !important;
+                border: 2px solid #e0e0e0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .virtue-card::before {
+                background: linear-gradient(90deg, #667eea, #764ba2) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .virtue-card h4 {
+                color: #667eea !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .family-first-rules {
+                background: #f8f9fa !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .rule-item {
+                background: white !important;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .rule-icon {
+                background: linear-gradient(135deg, #667eea, #764ba2) !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .consequence-ladder {
+                background: #fff3cd !important;
+                border: 1px solid #ffc107 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .consequence-ladder strong {
+                color: #856404 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .r-step {
+                background: white !important;
+                border: 3px solid #667eea !important;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .r-step-number {
+                background: #667eea !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .r-step h4 {
+                color: #667eea !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .daily-rhythm-table {
+                box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .daily-rhythm-table th {
+                background: linear-gradient(135deg, #667eea, #764ba2) !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .daily-rhythm-table td {
+                background: white !important;
+                border-bottom: 1px solid #e0e0e0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .principle-box {
+                background: linear-gradient(135deg, #fff, #f8f9fa) !important;
+                border: 2px solid #667eea !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .principle-title {
+                color: #667eea !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .signature-section {
+                background: #f8f9fa !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .toc {
+                background: white !important;
+                border: 2px solid #667eea !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .toc li::before {
+                color: #667eea !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .other-virtues-list {
+                background: #f0f4ff !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .immediate-reset-tools {
+                background: #e8f5e9 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .appeal-process {
+                background: #fff3e0 !important;
+                border: 1px solid #ff9800 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            /* Remove hover effects in print */
+            .virtue-card:hover,
+            .principle-box:hover {
+                transform: none !important;
             }
         }
         
@@ -465,6 +982,8 @@
                 <h3>Our Mission</h3>
                 <p>To create a Christian home, centered in the Orthodox faith, where we are formed in virtue and grow closer to Jesus Christ. We rely on God's grace in all our interactions.</p>
             </div>
+
+            <p>Our family's guiding purpose is to create a Christian environment, grounded in the faith maintained by the Body of Christ, the One Holy Catholic and Apostolic Church, the Orthodox Church. This environment is where we are formed in virtue, as we discern the Holy Spirit's specific goals for each of us and are conformed to the likeness of Christ.</p>
             
             <div class="scripture">
                 "As for me and my house, we will serve the Lord." - Joshua 24:15
@@ -481,17 +1000,21 @@
             <!-- Part II: Core Virtues -->
             <h2>Part II: Our Core Virtues</h2>
             
-            <p>The Lord has not created us to guarantee an easy or pleasurable life, or to ensure that all of our desires are always met, though sometimes He will see fit to bestow these things upon us. He has created us to turn us into something awesome, something incredible, eternal, something that reflects Him.</p>
+            <p>The Lord has not created us to guarantee an easy or pleasurable life, or to ensure that all of our desires are always met, though sometimes He will see fit to bestow these things upon us. He has created us to turn us into something awesome, something incredible, eternal, something that reflects Him. This process of forming us may often be hard. We are created to participate in the very life of God and draw upon divine energy to achieve virtues that will fill our lives with purpose and peace.</p>
+
+            <div class="scripture">
+                "And above all these virtues put on love, which binds them all together in perfect unity." - Colossians 3:14
+            </div>
             
-            <h3>The Three Theological Virtues</h3>
+            <h3>The Three Theological Virtues (The Foundational Virtues - Gifts from God)</h3>
             <div class="virtues-grid">
                 <div class="virtue-card">
                     <h4>✝ Faith</h4>
-                    <p>To believe in God, trust in Him, commit ourselves entirely to Him, and participate in the life of the Church, His Body.</p>
+                    <p>To believe in God, trust in Him, commit ourselves entirely to Him, and participate in the life of the Church, His Body. Trusting God completely and participating in the life of the Church.</p>
                 </div>
                 <div class="virtue-card">
                     <h4>⚓ Hope</h4>
-                    <p>To desire the Lord and the kingdom of heaven as our true happiness, trusting not in our own strength but in Christ's promises.</p>
+                    <p>To desire the Lord and the kingdom of heaven as our true happiness, trusting not in our own strength but in Christ's promises and the Holy Spirit.</p>
                 </div>
                 <div class="virtue-card">
                     <h4>❤️ Love</h4>
@@ -507,71 +1030,93 @@
             <div class="virtues-grid">
                 <div class="virtue-card">
                     <h4>💕 Love</h4>
-                    <p>To love one another with mutual affection.</p>
+                    <p>To love one another with mutual affection. Loving one another with mutual affection.</p>
                 </div>
                 <div class="virtue-card">
                     <h4>😊 Joy</h4>
-                    <p>To find delight in God and His blessings, even in difficult times.</p>
+                    <p>To find delight in God and His blessings, even in difficult times. Finding delight in God, even in difficult times.</p>
                 </div>
                 <div class="virtue-card">
                     <h4>🕊️ Peace</h4>
-                    <p>To live in harmony, trusting in God who is the source of true peace.</p>
+                    <p>To live in harmony, trusting in God who is the source of true peace. Living in harmony, trusting in God.</p>
                 </div>
                 <div class="virtue-card">
                     <h4>⏳ Patience</h4>
-                    <p>To persevere through challenges without frustration.</p>
+                    <p>To persevere through challenges without frustration. Persevering through challenges without frustration.</p>
                 </div>
                 <div class="virtue-card">
                     <h4>🤲 Kindness</h4>
-                    <p>To treat others with warmth and a desire to meet their real needs.</p>
+                    <p>To treat others with warmth and a desire to meet their real needs. Treating others with warmth and meeting their needs.</p>
                 </div>
                 <div class="virtue-card">
                     <h4>✨ Goodness</h4>
-                    <p>To desire and work for the blessing of our neighbor.</p>
+                    <p>To desire and work for the blessing of our neighbor. Desiring and working for the blessing of others.</p>
                 </div>
                 <div class="virtue-card">
                     <h4>🛡️ Faithfulness</h4>
-                    <p>To be steadfast in our commitments to God and to one another.</p>
+                    <p>To be steadfast in our commitments to God and to one another. Being steadfast in our commitments.</p>
                 </div>
                 <div class="virtue-card">
                     <h4>🌿 Gentleness</h4>
-                    <p>To have "gentle strength," moderating our anger with a humble spirit.</p>
+                    <p>To have "gentle strength," moderating our anger with a humble spirit. "Gentle strength," moderating anger with humility.</p>
                 </div>
                 <div class="virtue-card">
                     <h4>💪 Self-Control</h4>
-                    <p>To have rule over our own spirit, especially when we feel anger rising.</p>
+                    <p>To have rule over our own spirit, especially when we feel anger rising. Having rule over our own spirit, especially anger.</p>
                 </div>
+            </div>
+
+            <div class="other-virtues-list">
+                <h4>Other Daily Virtues</h4>
+                <ul>
+                    <li>Forgiveness</li>
+                    <li>Honesty</li>
+                    <li>Humility</li>
+                    <li>Responsibility</li>
+                    <li>Gratitude</li>
+                    <li>Diligence</li>
+                </ul>
             </div>
             
             <!-- Part III: Guiding Principles -->
             <h2>Part III: Our Guiding Principles</h2>
+
+            <p>These foundational ideas govern our home, flowing from our core virtues.</p>
             
             <div class="principles-visual">
                 <div class="principle-box">
                     <div class="principle-icon">🤝</div>
-                    <div class="principle-title">Kindness & Unity</div>
-                    <p>We use kind words, honor boundaries, and work together as a unified team.</p>
+                    <div class="principle-title">1. Kindness, Respect & Unity</div>
+                    <p>We use kind words, honor boundaries, and work together as a unified team. We interact with kindness, respect, and unity.</p>
                 </div>
                 <div class="principle-box">
                     <div class="principle-icon">🏠</div>
-                    <div class="principle-title">Responsibility & Stewardship</div>
-                    <p>We take excellent care of our things and our home. Everyone contributes to success.</p>
+                    <div class="principle-title">2. Responsibility & Stewardship</div>
+                    <p>We take excellent care of our things and our home. Everyone contributes to success. Our home runs because we all contribute; we embrace cleaning and chores as a necessary team effort.</p>
                 </div>
                 <div class="principle-box">
                     <div class="principle-icon">🌱</div>
-                    <div class="principle-title">Truth & Growth</div>
-                    <p>We are honest, own our mistakes, and seek to learn from our experiences.</p>
+                    <div class="principle-title">3. Truth & Growth</div>
+                    <p>We are honest, own our mistakes, and seek to learn from our experiences. We yield to truth and pursue growth.</p>
                 </div>
+            </div>
+
+            <div style="background: #e3f2fd; padding: 25px; border-radius: 10px; margin: 30px 0; border: 1px solid #2196f3;">
+                <h4 style="color: #1565c0; margin-bottom: 10px;">4. The Leadership Principle</h4>
+                <p>Dad is bound by this same Constitution. He will model a calm voice, maintain cleanliness, and demonstrate the 3 R's.</p>
             </div>
             
             <!-- Part IV: FAMILY FIRST Rules -->
             <h2>Part IV: Our Operational Rules - FAMILY FIRST</h2>
+
+            <p style="font-size: 1.1em; margin-bottom: 30px;">This is the code we live by. These rules are the practical application of our Guiding Principles.</p>
             
             <div class="family-first-rules">
                 <div class="rule-item">
                     <div class="rule-icon">👂</div>
                     <div class="rule-title">F - Follow Instructions</div>
-                    <p>Listen immediately when spoken to. Make eye contact and acknowledge. Obey first, discuss later when calm.</p>
+                    <p>Listen immediately when spoken to. Make eye contact and acknowledge. Obey first, discuss later when calm. Do not interrupt.</p>
+                    <p style="margin-top: 10px;"><em>Scripture: "Children, obey your parents in the Lord, for this is right." - Ephesians 6:1</em></p>
                     <div class="consequence-ladder">
                         <strong>Consequence Ladder:</strong> Gentle Redo → Pause & Think → Screen privilege pause
                     </div>
@@ -580,7 +1125,8 @@
                 <div class="rule-item">
                     <div class="rule-icon">✔️</div>
                     <div class="rule-title">A - Act Responsibly</div>
-                    <p><strong>KEYSTONE RULE:</strong> Everything has a home. Clean up your own messes immediately. Complete daily responsibilities without reminders.</p>
+                    <p><strong>KEYSTONE RULE:</strong> Everything has a home. Clean up your own messes immediately. Complete daily responsibilities without reminders. Complete tasks without reminders.</p>
+                    <p style="margin-top: 10px;"><em>Scripture: "Let all things be done decently and in order." - 1 Corinthians 14:40</em></p>
                     <div class="consequence-ladder">
                         <strong>Consequence Ladder:</strong> Responsible for cleanup → Screen pause if ignored → Earn back with complete reset
                     </div>
@@ -589,7 +1135,8 @@
                 <div class="rule-item">
                     <div class="rule-icon">📱</div>
                     <div class="rule-title">M - Mind Your Screen</div>
-                    <p>Weekday screens only after responsibilities complete. Weekend baseline: 2 hours after chores. Create more than consume.</p>
+                    <p>Weekday screens only after responsibilities complete. Weekend baseline: 2 hours after chores. Create more than consume. Dock by 8:30 PM.</p>
+                    <p style="margin-top: 10px;"><em>Scripture: "All things are lawful for me, but not all things are helpful." - 1 Corinthians 6:12</em></p>
                     <div class="consequence-ladder">
                         <strong>Consequence Ladder:</strong> Immediate pause for misuse → Earn back with creative/outdoor project
                     </div>
@@ -598,7 +1145,8 @@
                 <div class="rule-item">
                     <div class="rule-icon">💬</div>
                     <div class="rule-title">I - Interact Kindly (The Peace Code)</div>
-                    <p>Use the Peace Code: "I feel..." (emotion), "When you..." (action), "Please..." (request). Think before speaking.</p>
+                    <p>Use the Peace Code: "I feel..." (emotion), "When you..." (action), "Please..." (request). Think before speaking. Forgive quickly.</p>
+                    <p style="margin-top: 10px;"><em>Scripture: "Be kind to one another, tenderhearted, forgiving one another." - Ephesians 4:32</em></p>
                     <div class="consequence-ladder">
                         <strong>Consequence Ladder:</strong> Calm Space → Kind Ladder → Privilege pause
                     </div>
@@ -608,6 +1156,7 @@
                     <div class="rule-icon">🤚</div>
                     <div class="rule-title">L - Love Your Space</div>
                     <p>Keep hands, feet, and objects to yourself. "Stop" means freeze immediately. Respect personal bubbles.</p>
+                    <p style="margin-top: 10px;"><em>Scripture: "Do you not know that your body is a temple of the Holy Spirit?" - 1 Corinthians 6:19</em></p>
                     <div class="consequence-ladder">
                         <strong>Consequence Ladder:</strong> Gentle Redo → Pause & Think → Loss of group activities until repair
                     </div>
@@ -616,7 +1165,8 @@
                 <div class="rule-item">
                     <div class="rule-icon">⚖️</div>
                     <div class="rule-title">Y - Yield to Truth</div>
-                    <p>Always tell the truth, even when difficult. Own mistakes immediately. Honest confession meets grace.</p>
+                    <p>Always tell the truth, even when difficult. Own mistakes immediately. Honest confession meets grace. Confession brings grace.</p>
+                    <p style="margin-top: 10px;"><em>Scripture: "Therefore, putting away lying, let each one of you speak truth." - Ephesians 4:25</em></p>
                     <div class="consequence-ladder">
                         <strong>Consequence:</strong> Truth leads to grace and simple repair. Lies lead to loss of privileges and formal restoration.
                     </div>
@@ -625,7 +1175,8 @@
                 <div class="rule-item">
                     <div class="rule-icon">👨‍👩‍👧‍👦</div>
                     <div class="rule-title">F - Family Unity</div>
-                    <p>No comparison of chores, privileges, or belongings. Celebrate each other's successes. Pray together daily.</p>
+                    <p>No comparison of chores, privileges, or belongings. Celebrate each other's successes. Pray together daily. Do not compare. Help without keeping score.</p>
+                    <p style="margin-top: 10px;"><em>Scripture: "Behold, how good and how pleasant it is for brethren to dwell together in unity!" - Psalm 133:1</em></p>
                     <div class="consequence-ladder">
                         <strong>Consequence Ladder:</strong> Gentle Redo for complaining → Family Huddle for patterns
                     </div>
@@ -634,7 +1185,8 @@
                 <div class="rule-item">
                     <div class="rule-icon">🌟</div>
                     <div class="rule-title">I - Inspire Joy</div>
-                    <p>Say "thank you" for all actions. Focus on blessings, not lacks. Share gratitude during nightly prayers.</p>
+                    <p>Say "thank you" for all actions. Focus on blessings, not lacks. Share gratitude during nightly prayers. Focus on blessings, not what we lack.</p>
+                    <p style="margin-top: 10px;"><em>Scripture: "In everything give thanks." - 1 Thessalonians 5:18</em></p>
                     <div class="consequence-ladder">
                         <strong>Consequence Ladder:</strong> Joy Reset (name 5 grateful things) → Privilege pause for persistent negativity
                     </div>
@@ -643,7 +1195,8 @@
                 <div class="rule-item">
                     <div class="rule-icon">🎯</div>
                     <div class="rule-title">R - Respect All</div>
-                    <p>No yelling or screaming. Use inside voices. Walk to speak, don't shout. Count to 10 when angry.</p>
+                    <p>No yelling or screaming. Use inside voices. Walk to speak, don't shout. Count to 10 when angry. When angry, take a "Pause & Think."</p>
+                    <p style="margin-top: 10px;"><em>Scripture: "Let every man be swift to hear, slow to speak, slow to wrath." - James 1:19</em></p>
                     <div class="consequence-ladder">
                         <strong>Consequence Ladder:</strong> Volume Check → Calm Space → Privilege pause for outbursts
                     </div>
@@ -652,7 +1205,8 @@
                 <div class="rule-item">
                     <div class="rule-icon">🎨</div>
                     <div class="rule-title">S - Seek Purpose</div>
-                    <p>Try new things and learn from mistakes. Use screen time for learning and discovery. Share what you learn.</p>
+                    <p>Try new things and learn from mistakes. Use screen time for learning and discovery. Share what you learn. Be willing to try new things and learn from mistakes.</p>
+                    <p style="margin-top: 10px;"><em>Scripture: "For we are His workmanship, created in Christ Jesus for good works." - Ephesians 2:10</em></p>
                     <div class="consequence-ladder">
                         <strong>Consequence:</strong> Failure to challenge yourself results in loss of discretionary privileges
                     </div>
@@ -662,18 +1216,27 @@
                     <div class="rule-icon">🤝</div>
                     <div class="rule-title">T - Teamwork Always</div>
                     <p>Work together with positive attitude. Include everyone - no one left behind. Contribute at family meetings.</p>
+                    <p style="margin-top: 10px;"><em>Scripture: "Bear one another's burdens, and so fulfill the law of Christ." - Galatians 6:2</em></p>
                     <div class="consequence-ladder">
                         <strong>Consequence Ladder:</strong> Solo timeout → Must complete joint task to rejoin group activities
                     </div>
                 </div>
             </div>
+
+            <p style="margin-top: 30px;"><em>Note: Detailed consequence ladders for these rules are maintained by Dad, focusing on: Gentle Redo → Pause & Think → Privilege Pause/Restoration.</em></p>
             
             <!-- Part V: Restorative Justice -->
             <h2>Part V: Our Restorative Justice Framework</h2>
             
             <p><strong>Our home is governed by grace.</strong> Consequences are designed to be short, skill-building, and reversible. We do not use shame or yelling. We focus on restorative justice—making things right—administered with love and resolved with speed.</p>
+
+            <p style="margin: 30px 0; padding: 20px; background: #e8f5e9; border-radius: 10px; border: 1px solid #4caf50;">
+                <strong>The Repair Principle:</strong> When a mistake is made, a 5-minute <strong>Repair Window</strong> (shown on a timer) begins. A successful repair prevents any further consequence.
+            </p>
             
             <h3>The 3 R's: Our Path to Restoration</h3>
+
+            <p style="text-align: center; margin: 20px 0; color: #666;">A mistake happens or harm is caused...</p>
             
             <div class="three-rs-diagram">
                 <div class="r-step">
@@ -689,8 +1252,46 @@
                 <div class="r-step">
                     <div class="r-step-number">3</div>
                     <h4>Restore</h4>
-                    <p>Reconnect with the person you wronged</p>
+                    <p>Reconnect with the person you wronged and return to peace</p>
                 </div>
+            </div>
+
+            <div class="immediate-reset-tools">
+                <h3>Immediate Reset Tools</h3>
+                <div class="reset-tool-item">
+                    <strong>Gentle Redo:</strong>
+                    Say or do it again with the correct tone and action.
+                </div>
+                <div class="reset-tool-item">
+                    <strong>Pause & Think:</strong>
+                    A brief cool-down (1–5 minutes) to breathe and pray.
+                </div>
+                <div class="reset-tool-item">
+                    <strong>Calm Space:</strong>
+                    Separate to cool down before using the Peace Code.
+                </div>
+            </div>
+            
+            <!-- Part VI: Governance -->
+            <h2>Part VI: Governance & Systems</h2>
+            
+            <div class="mission-box">
+                <h3>🏛️ The Family Council</h3>
+                <p><strong>Weekly Meeting (Sunday Evening)</strong></p>
+                <p>We hold a weekly Family Council meeting (usually Sunday evening).</p>
+                <div style="text-align: left; margin-top: 20px;">
+                    <strong>Agenda:</strong><br>
+                    1. 💝 <strong>Opening/Appreciation:</strong> Share appreciation for a family member (Sharing gratitude for each other)<br>
+                    2. 📅 <strong>Logistics:</strong> Review the week ahead (Calendar review)<br>
+                    3. 🎉 <strong>Celebrations:</strong> Acknowledge wins and virtues shown<br>
+                    4. 🔧 <strong>Problem-Solving:</strong> Discuss challenges together<br>
+                    5. 🎮 <strong>Closing:</strong> Plan a fun family activity
+                </div>
+            </div>
+
+            <div class="appeal-process">
+                <h3>The Appeal Process</h3>
+                <p>You may make <strong>one</strong> respectful appeal to Dad with new information. A decision will be made quickly. This is for clarification, not argument.</p>
             </div>
             
             <!-- Part VII: Daily & Weekly Rhythms -->
@@ -703,81 +1304,73 @@
             <table class="daily-rhythm-table">
                 <thead>
                     <tr>
-                        <th>🌅 Time</th>
-                        <th>Activity</th>
-                        <th>Tasks</th>
+                        <th>🌅 Time/Rhythm</th>
+                        <th>Activity/Timing</th>
+                        <th>Tasks/Key Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Morning Launch</strong><br>(By 7:30 AM)</td>
-                        <td>Start the Day Right</td>
+                        <td><strong>☀️ Morning Launch</strong></td>
+                        <td>By 7:30 AM<br>Start the Day Right</td>
                         <td>
                             • Bathroom & wash face<br>
                             • Brush teeth (2 minutes)<br>
                             • Get dressed & make bed<br>
                             • Pack backpack<br>
-                            • Eat breakfast & clear place
+                            • Eat breakfast & clear place<br>
+                            • Bathroom, teeth, dressed, bed made, backpack packed, breakfast cleared
                         </td>
                     </tr>
                     <tr>
-                        <td><strong>After-School Landing</strong><br>(Within 5 min of entry)</td>
-                        <td>Transition Home</td>
+                        <td><strong>🏫 After-School Landing</strong></td>
+                        <td>Within 5 min of entry<br>Transition Home</td>
                         <td>
                             • Coat on hook, shoes in cubby<br>
                             • Empty backpack properly<br>
                             • Papers to Dad's inbox<br>
                             • Lunchbox to sink<br>
-                            • Water bottle to rack
+                            • Water bottle to rack<br>
+                            • Gear away (coat, shoes, backpack)<br>
+                            • Backpack emptied (homework, papers, lunchbox)
                         </td>
                     </tr>
                     <tr>
-                        <td><strong>Evening Reset</strong><br>(Before bed)</td>
-                        <td>Prepare for Tomorrow</td>
+                        <td><strong>🌙 Evening Reset</strong></td>
+                        <td>Before bed<br>Prepare for Tomorrow</td>
                         <td>
                             • Clothes in hamper<br>
                             • Desks and surfaces cleared<br>
                             • Personal trash in garbage<br>
-                            • Personal areas reset
+                            • Personal areas reset<br>
+                            • Personal trash thrown away
                         </td>
                     </tr>
                     <tr>
-                        <td><strong>Kitchen Crew</strong><br>(After dinner)</td>
-                        <td>Team Cleanup</td>
+                        <td><strong>🍽️ Kitchen Crew</strong></td>
+                        <td>After dinner<br>Team Cleanup</td>
                         <td>
                             • Set/clear table<br>
                             • Load/unload dishwasher<br>
                             • Wipe counters and chairs<br>
-                            • Team effort until complete
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>Weekly Power Hour</strong><br>(Sunday, 60 min)</td>
-                        <td>Team Reset</td>
-                        <td>
-                            • Sprint 1: Home Reset<br>
-                            • Sprint 2: Beds & Baths<br>
-                            • Sprint 3: Kitchen & Command<br>
-                            • Sprint 4: Week Ahead Prep
+                            • Team effort until complete<br>
+                            • A team effort until the kitchen is clean (dishes, counters, table)<br>
+                            • Roles may rotate
                         </td>
                     </tr>
                 </tbody>
             </table>
-            
-            <!-- Part VI: Governance -->
-            <h2>Part VI: Governance & Systems</h2>
-            
-            <div class="mission-box">
-                <h3>🏛️ The Family Council</h3>
-                <p><strong>Weekly Meeting (Sunday Evening)</strong></p>
-                <div style="text-align: left; margin-top: 20px;">
-                    <strong>Agenda:</strong><br>
-                    1. 💝 <strong>Opening:</strong> Share appreciation for a family member<br>
-                    2. 📅 <strong>Logistics:</strong> Review the week ahead<br>
-                    3. 🎉 <strong>Celebrations:</strong> Acknowledge wins and virtues shown<br>
-                    4. 🔧 <strong>Problem-Solving:</strong> Discuss challenges together<br>
-                    5. 🎮 <strong>Closing:</strong> Plan a fun family activity
-                </div>
+
+            <h3>The Weekly Power Hour (Team Reset)</h3>
+            <div style="background: #f3e5f5; padding: 25px; border-radius: 10px; margin: 30px 0;">
+                <p><strong>Sunday, 60 minutes</strong> - A 60-minute, all-hands-on-deck effort (typically Sunday) to reset our home. The goal is a focused team effort with a positive attitude.</p>
+                <p style="margin-top: 15px;">Tasks are prioritized based on the week's needs, drawing from "Sprints" such as:</p>
+                <ul style="list-style: none; padding-left: 20px; margin-top: 15px;">
+                    <li>• <strong>Sprint 1 - Home Reset:</strong> Vacuuming, trash, clutter audit</li>
+                    <li>• <strong>Sprint 2 - Beds & Baths:</strong> Laundry, towels, supplies</li>
+                    <li>• <strong>Sprint 3 - Kitchen & Command Center:</strong> Appliances, paper sorting, calendar</li>
+                    <li>• <strong>Sprint 4 - Week Ahead Prep:</strong> Charging devices, packing bags</li>
+                </ul>
             </div>
             
             <!-- Part VIII: Our Commitments -->
@@ -790,17 +1383,17 @@
             </div>
             
             <div style="background: #e8f5e9; padding: 30px; border-radius: 10px; margin: 30px 0;">
-                <p><strong>Dad is not above the rules.</strong> Dad is accountable to the family through these promises:</p>
+                <p><strong>Dad is not above the rules.</strong> Dad is accountable to the family through these promises. Dad is accountable to the family and this Constitution.</p>
                 <ul style="list-style: none; padding: 20px 0;">
-                    <li>✓ <strong>Calm Voice Always:</strong> No yelling. 60-second reset if needed.</li>
+                    <li>✓ <strong>Calm Voice Always:</strong> No yelling. 60-second reset if needed. Dad will use a 60-second reset if needed.</li>
                     <li>✓ <strong>Clear Expectations:</strong> Instructions will be clear and given in advance.</li>
-                    <li>✓ <strong>Daily Connection:</strong> Each child receives dedicated one-on-one time.</li>
-                    <li>✓ <strong>Full Listening:</strong> No interrupting, reflect back what was heard.</li>
+                    <li>✓ <strong>Daily Connection:</strong> Each child receives dedicated one-on-one time. Dedicated one-on-one time with each child daily.</li>
+                    <li>✓ <strong>Full Listening:</strong> No interrupting, reflect back what was heard. Dad will not interrupt.</li>
                     <li>✓ <strong>Explain the "Why":</strong> Reasons behind rules explained when feasible.</li>
-                    <li>✓ <strong>Public Accountability:</strong> Mistakes require public apology and repair.</li>
+                    <li>✓ <strong>Public Accountability:</strong> Mistakes require public apology and repair. Dad will apologize publicly and use the 3 R's when he makes mistakes.</li>
                     <li>✓ <strong>Predictability:</strong> Notice given for schedule changes.</li>
-                    <li>✓ <strong>Emotional Safety:</strong> Model healthy emotional expression.</li>
-                    <li>✓ <strong>Grace First:</strong> Repair always prioritized over punishment.</li>
+                    <li>✓ <strong>Emotional Safety:</strong> Model healthy emotional expression. Dad will control his own emotions to model healthy expression.</li>
+                    <li>✓ <strong>Grace First:</strong> Repair always prioritized over punishment. Repair is the priority over punishment.</li>
                 </ul>
             </div>
             
@@ -808,10 +1401,10 @@
             <p>We recognize that God made our brains differently, and we adapt to support each other:</p>
             <ul>
                 <li>Visual timers and picture labels are standard practice</li>
-                <li>Tasks broken into manageable chunks</li>
+                <li>Tasks broken into manageable chunks. Breaking tasks into chunks.</li>
                 <li>Movement breaks encouraged</li>
-                <li>Extra patience for executive function challenges</li>
-                <li>Grace without excuses - trusting God's grace to enable the impossible</li>
+                <li>Extra patience for executive function challenges. Labels are standard practice. We offer extra patience for challenges.</li>
+                <li>Grace without excuses - trusting God's grace to enable the impossible. We will not use ADHD as an excuse but will trust God's grace to enable us to do what is impossible.</li>
             </ul>
             
             <!-- Part IX: Ratification -->
@@ -819,6 +1412,8 @@
                 <h2>Part IX: Ratification</h2>
                 <p style="font-size: 1.2em; margin-bottom: 40px;">This Constitution is our promise to live together with faith, respect, and love. We will review it weekly at our Family Council and adjust it together with prayer.</p>
                 
+                <p style="margin-bottom: 40px;">Signed in unity, faith, and love:</p>
+
                 <div class="signature-grid">
                     <div>
                         <div class="signature-line"></div>
